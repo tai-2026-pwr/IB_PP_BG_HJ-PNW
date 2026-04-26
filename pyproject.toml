@@ -1,0 +1,43 @@
+[project]
+name = "ib-pp-bg-hj-pnw"
+version = "0.1.0"
+description = "Projekt Naukowo Wdrożeniowy I: Wykorzystanie metod sztucznej inteligencji do identyfikacji peptydów penetrujących komórki na podstawie ich sekwencji aminokwasowej"
+readme = "README.md"
+requires-python = "==3.14.2"
+
+authors = [
+  { name = "Ignacy Berent" },
+  { name = "Pola Polańska" },
+  { name = "Bartosz Gałczyński" },
+  { name = "Hubert Janaszczyk" },
+]
+
+
+dependencies = [
+  "ipykernel>=7.2.0",
+  "ipython>=9.13.0",
+  "jupyter>=1.1.1",
+  "jupytext>=1.19.1",
+  "loguru>=0.7.3",
+  "matplotlib>=3.10.9",
+  "numpy==2.4.3",
+  "pandas>=3.0.2",
+  "pingouin>=0.6.1",
+  "pydantic>=2.13.3",
+  "scikit-learn>=1.8.0",
+  "scipy>=1.17.1",
+  "seaborn>=0.13.2",
+  "torch==2.11.0+rocm7.2",
+  "tqdm>=4.67.3",
+]
+
+[tool.uv]
+environments = ["sys_platform == 'linux'"]
+index-strategy = "unsafe-best-match"
+
+[[tool.uv.index]]
+name = "pytorch-rocm"
+url = "https://download.pytorch.org/whl/rocm7.2"
+
+[dependency-groups]
+dev = ["mypy>=1.20.2", "ruff>=0.15.12"]
