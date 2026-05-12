@@ -171,3 +171,9 @@ PLAN.md
 plan.md
 TODO.md
 todo.md
+
+#datasets
+data/raw/
+data/processed/
+__pycache__/
+.ipynb_checkpoints/
