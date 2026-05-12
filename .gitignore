@@ -172,8 +172,5 @@ plan.md
 TODO.md
 todo.md
 
-#datasets
+#datasets raw ones
 data/raw/
-data/processed/
-__pycache__/
-.ipynb_checkpoints/
