@@ -14,7 +14,7 @@ from sklearn.svm import OneClassSVM
 RANDOM_STATE = 50
 TRAIN_PATH = Path("data/processed/dataset_CPP_1to1_train.csv")
 TEST_PATH = Path("data/processed/dataset_CPP_1to1_test.csv")
-OUTPUT_DIR = Path("results/one_class_results")
+OUTPUT_DIR = Path("results/one_class")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 AMINO_ACIDS = list("ACDEFGHIKLMNPQRSTVWY")
 
