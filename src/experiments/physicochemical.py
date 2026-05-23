@@ -46,30 +46,19 @@ def build_features(df):
     return np.array([extract_physicochemical(seq) for seq in df["Seq"]])
 
 
-def make_model(model_name, dataset_type):
-    class_weight = "balanced" if dataset_type == "imbalanced" else None
+MODELS = {
+    "SVM":               SVC,
+    "Random Forest":     RandomForestClassifier,
+    "Gradient Boosting": GradientBoostingClassifier,
+}
 
+def make_model(model_name):
     if model_name == "SVM":
         return Pipeline([
             ("scaler", StandardScaler()),
-            ("model",  SVC(kernel="rbf", C=1.0, probability=True,
-                           class_weight=class_weight, random_state=RANDOM_STATE)),
+            ("model",  MODELS[model_name](probability=True, random_state=RANDOM_STATE)),
         ])
-
-    if model_name == "Random Forest":
-        return RandomForestClassifier(
-            n_estimators=100,
-            class_weight=class_weight,
-            random_state=RANDOM_STATE,
-        )
-
-    if model_name == "Gradient Boosting":
-        return GradientBoostingClassifier(
-            n_estimators=100,
-            random_state=RANDOM_STATE,
-        )
-
-    raise ValueError(f"Unknown model name: {model_name}")
+    return MODELS[model_name](random_state=RANDOM_STATE)
 
 
 def calculate_metrics(y_true, y_pred, y_score):
@@ -103,7 +92,7 @@ def run_single_experiment(train_df, test_df, model_name, dataset_type):
         X_fold_train, y_fold_train = X_train[train_index], y_train[train_index]
         X_fold_val,   y_fold_val   = X_train[val_index],   y_train[val_index]
 
-        model = make_model(model_name, dataset_type)
+        model = make_model(model_name)
         model.fit(X_fold_train, y_fold_train)
         metrics = evaluate_model(model, X_fold_val, y_fold_val)
 
@@ -128,7 +117,7 @@ def run_single_experiment(train_df, test_df, model_name, dataset_type):
         mean_row[metric] = fold_results[metric].mean()
         std_row[metric]  = fold_results[metric].std()
 
-    final_model = make_model(model_name, dataset_type)
+    final_model = make_model(model_name)
     final_model.fit(X_train, y_train)
 
     test_metrics = evaluate_model(final_model, X_test, y_test)
