@@ -29,6 +29,7 @@ dependencies = [
   "seaborn>=0.13.2",
   "torch==2.11.0+rocm7.2",
   "tqdm>=4.67.3",
+  "transformers==5.8.*"
 ]
 
 [tool.uv]
