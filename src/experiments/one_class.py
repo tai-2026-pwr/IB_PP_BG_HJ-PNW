@@ -58,19 +58,12 @@ def build_features(df, representation):
 
 def make_model(model_name):
     if model_name == "One-Class SVM":
-        model = Pipeline([
-            ("scaler", StandardScaler()),
-            ("model", OneClassSVM(kernel="rbf", gamma="scale", nu=0.1)),])
+        model = Pipeline([("scaler", StandardScaler()), ("model", OneClassSVM()),])
         return model
 
     if model_name == "Isolation Forest":
-        model = IsolationForest(
-            n_estimators=200,
-            contamination=0.1,
-            random_state=RANDOM_STATE,
-        )
+        model = IsolationForest(random_state=RANDOM_STATE,)
         return model
-    raise ValueError("Unknown model name")
 
 def convert_predictions(raw_predictions):
     return np.where(raw_predictions == 1, 1, 0)
