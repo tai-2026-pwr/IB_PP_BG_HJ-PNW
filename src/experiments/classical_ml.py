@@ -2,14 +2,47 @@ from __future__ import annotations
 
 import pandas as pd
 
-from src.experiments.configs import classical_ml_configs, representations_configs_classic_ml
+from src.model_helpers.classic_ml import ClassicalModel, evaluate_test_set_classic_ml
 from src.model_helpers.fold_train import fold_train
-from src.model_helpers.sklearn import evaluate_test_set_classic_ml
+from src.model_helpers.one_class import OneClassModels
+from src.paths import (
+    TEST_BALANCED_PATH,
+    TEST_IMBALANCED_PATH,
+    TRAIN_BALANCED_PATH,
+    TRAIN_IMBALANCED_PATH,
+)
 from src.utils import load_data as data_loader
-from src.utils.representations import extract_aac, extract_features_dataframe
+from src.utils.representations import Representation, extract_aac, extract_features_dataframe
 from src.utils.runner import (
+    build_output_dir,
     save_results,
 )
+
+classical_ml_configs = [
+    (ClassicalModel.SVM, "balanced", TRAIN_BALANCED_PATH, TEST_BALANCED_PATH),
+    (ClassicalModel.SVM, "imbalanced", TRAIN_IMBALANCED_PATH, TEST_IMBALANCED_PATH),
+    (ClassicalModel.RANDOM_FOREST, "balanced", TRAIN_BALANCED_PATH, TEST_BALANCED_PATH),
+    (ClassicalModel.RANDOM_FOREST, "imbalanced", TRAIN_IMBALANCED_PATH, TEST_IMBALANCED_PATH),
+    (ClassicalModel.GRADIENT_BOOSTING, "balanced", TRAIN_BALANCED_PATH, TEST_BALANCED_PATH),
+    (ClassicalModel.GRADIENT_BOOSTING, "imbalanced", TRAIN_IMBALANCED_PATH, TEST_IMBALANCED_PATH),
+]
+
+
+one_class_ml_configs = [
+    (OneClassModels.SVM, "balanced", TRAIN_BALANCED_PATH, TEST_BALANCED_PATH),
+    (OneClassModels.IFOREST, "balanced", TRAIN_BALANCED_PATH, TEST_BALANCED_PATH),
+]
+
+output_dir_aac_classical = build_output_dir("results/classical_ml/aac")
+output_dir_dpc_classical = build_output_dir("results/classical_ml/dpc")
+output_dir_physicochemical_classical = build_output_dir("results/classical_ml/physicochemical")
+
+representations_configs_classic_ml = [
+    (Representation.AAC, output_dir_aac_classical),
+    (Representation.DPC, output_dir_dpc_classical),
+    (Representation.PHYSICOCHEMICAL, output_dir_physicochemical_classical),
+]
+
 
 if __name__ == "__main__":
     for representation, output_dir in representations_configs_classic_ml:

@@ -4,8 +4,8 @@ from collections import defaultdict
 import numpy as np
 import pandas as pd
 
+from src.model_helpers.classic_ml import ClassicalModel, train_fold_classic_ml
 from src.model_helpers.one_class import OneClassModels, train_fold_one_class
-from src.model_helpers.sklearn import ClassicalModel, train_fold_classic_ml
 from src.utils.load_data import get_cv_folds
 from src.utils.metrics import Metrics
 from src.utils.representations import Representation

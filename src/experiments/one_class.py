@@ -2,17 +2,28 @@ from __future__ import annotations
 
 import pandas as pd
 
-from src.experiments.configs import (
-    one_class_ml_configs,
-    representations_configs_one_class,
-)
 from src.model_helpers.fold_train import fold_train
-from src.model_helpers.one_class import evaluate_test_set_one_class
+from src.model_helpers.one_class import OneClassModels, evaluate_test_set_one_class
+from src.paths import TEST_BALANCED_PATH, TRAIN_BALANCED_PATH
 from src.utils import load_data as data_loader
-from src.utils.representations import extract_aac, extract_features_dataframe
+from src.utils.representations import Representation, extract_aac, extract_features_dataframe
 from src.utils.runner import (
+    build_output_dir,
     save_results,
 )
+
+one_class_ml_configs = [
+    (OneClassModels.SVM, "balanced", TRAIN_BALANCED_PATH, TEST_BALANCED_PATH),
+    (OneClassModels.IFOREST, "balanced", TRAIN_BALANCED_PATH, TEST_BALANCED_PATH),
+]
+
+output_dir_aac_oneclass = build_output_dir("results/one_class/aac")
+output_dir_physicochemical_oneclass = build_output_dir("results/one_class/physicochemical")
+
+representations_configs_one_class = [
+    (Representation.AAC, output_dir_aac_oneclass),
+    (Representation.PHYSICOCHEMICAL, output_dir_physicochemical_oneclass),
+]
 
 if __name__ == "__main__":
     for representation, output_dir in representations_configs_one_class:
