@@ -1,5 +1,3 @@
-from pathlib import Path
-
 import numpy as np
 import pandas as pd
 import torch
@@ -15,16 +13,9 @@ from src.paths import (
     TRAIN_IMBALANCED_PATH,
 )
 from src.preprocessing.constatns import BATCH_SIZE, ESM_MODEL_NAME, MAX_LEN
+from src.utils.load_data import load_data
 
 logging.set_verbosity_error()
-
-
-def load_data(path: str | Path) -> pd.DataFrame:
-    df = pd.read_csv(path)
-    df = df[["Seq", "CPP"]].dropna().copy()
-    df["Seq"] = df["Seq"].astype(str).str.strip().str.upper()
-    df = df[df["Seq"] != ""].copy()
-    return df
 
 
 def get_embeddings(

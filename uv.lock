@@ -446,7 +446,7 @@ wheels = [
 [[package]]
 name = "ib-pp-bg-hj-pnw"
 version = "0.1.0"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
     { name = "biopython", marker = "sys_platform == 'linux'" },
     { name = "ipykernel", marker = "sys_platform == 'linux'" },
