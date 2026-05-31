@@ -1,22 +1,27 @@
 from pathlib import Path
+
 import numpy as np
 import pandas as pd
 import peptides
-
 from sklearn.ensemble import IsolationForest
-from sklearn.metrics import accuracy_score, balanced_accuracy_score, f1_score
-from sklearn.metrics import matthews_corrcoef, roc_auc_score
+from sklearn.metrics import (
+    accuracy_score,
+    balanced_accuracy_score,
+    f1_score,
+    matthews_corrcoef,
+    roc_auc_score,
+)
 from sklearn.model_selection import StratifiedKFold
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import OneClassSVM
 
-RANDOM_STATE = 50
-TRAIN_PATH = Path("data/processed/dataset_CPP_1to1_train.csv")
-TEST_PATH = Path("data/processed/dataset_CPP_1to1_test.csv")
+from src.constants import AMINO_ACIDS, RANDOM_STATE
+from src.paths import TEST_BALANCED_PATH, TRAIN_BALANCED_PATH
+
 OUTPUT_DIR = Path("results/one_class")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-AMINO_ACIDS = list("ACDEFGHIKLMNPQRSTVWY")
+
 
 def load_data(path):
     df = pd.read_csv(path)
@@ -24,6 +29,7 @@ def load_data(path):
     df["Seq"] = df["Seq"].astype(str).str.strip().str.upper()
     df = df[df["Seq"] != ""].copy()
     return df
+
 
 def extract_aac(seq):
     features = []
@@ -33,6 +39,7 @@ def extract_aac(seq):
         value = seq.count(aa) / length
         features.append(value)
     return features
+
 
 def extract_physicochemical(seq):
     pep = peptides.Peptide(seq)
@@ -44,7 +51,9 @@ def extract_physicochemical(seq):
         pep.instability_index(),
         pep.aliphatic_index(),
         pep.boman(),
-        pep.charge(pH=7.0),]
+        pep.charge(pH=7.0),
+    ]
+
 
 def build_features(df, representation):
     features = []
@@ -56,17 +65,27 @@ def build_features(df, representation):
         features.append(row)
     return np.array(features)
 
+
 def make_model(model_name):
     if model_name == "One-Class SVM":
-        model = Pipeline([("scaler", StandardScaler()), ("model", OneClassSVM()),])
+        model = Pipeline(
+            [
+                ("scaler", StandardScaler()),
+                ("model", OneClassSVM()),
+            ]
+        )
         return model
 
     if model_name == "Isolation Forest":
-        model = IsolationForest(random_state=RANDOM_STATE,)
+        model = IsolationForest(
+            random_state=RANDOM_STATE,
+        )
         return model
+
 
 def convert_predictions(raw_predictions):
     return np.where(raw_predictions == 1, 1, 0)
+
 
 def calculate_metrics(y_true, y_pred, y_score):
     results = {
@@ -74,8 +93,10 @@ def calculate_metrics(y_true, y_pred, y_score):
         "balanced_accuracy": balanced_accuracy_score(y_true, y_pred),
         "f1": f1_score(y_true, y_pred),
         "mcc": matthews_corrcoef(y_true, y_pred),
-        "roc_auc": roc_auc_score(y_true, y_score),}
+        "roc_auc": roc_auc_score(y_true, y_score),
+    }
     return results
+
 
 def evaluate_model(model, X, y):
     raw_predictions = model.predict(X)
@@ -85,10 +106,12 @@ def evaluate_model(model, X, y):
 
     return metrics
 
+
 def train_one_class_model(model, X_train, y_train):
     X_positive = X_train[y_train == 1]
     model.fit(X_positive)
     return model
+
 
 def run_single_experiment(train_df, test_df, representation, model_name):
     X_train = build_features(train_df, representation)
@@ -99,7 +122,8 @@ def run_single_experiment(train_df, test_df, representation, model_name):
     cv = StratifiedKFold(
         n_splits=5,
         shuffle=True,
-        random_state=RANDOM_STATE,)
+        random_state=RANDOM_STATE,
+    )
     fold_rows = []
 
     for fold_number, split in enumerate(cv.split(X_train, y_train), start=1):
@@ -118,7 +142,8 @@ def run_single_experiment(train_df, test_df, representation, model_name):
         row = {
             "model": model_name,
             "representation": representation,
-            "fold": fold_number,}
+            "fold": fold_number,
+        }
         row.update(metrics)
         fold_rows.append(row)
 
@@ -154,14 +179,16 @@ def run_single_experiment(train_df, test_df, representation, model_name):
     summary = pd.DataFrame([mean_row, std_row, test_row])
     return fold_results, summary
 
-train_df = load_data(TRAIN_PATH)
-test_df = load_data(TEST_PATH)
+
+train_df = load_data(TRAIN_BALANCED_PATH)
+test_df = load_data(TEST_BALANCED_PATH)
 
 configs = [
     ("AAC", "One-Class SVM"),
     ("Physicochemical", "One-Class SVM"),
     ("AAC", "Isolation Forest"),
-    ("Physicochemical", "Isolation Forest"),]
+    ("Physicochemical", "Isolation Forest"),
+]
 
 all_folds = []
 all_summaries = []

@@ -1,9 +1,13 @@
 from pathlib import Path
-import matplotlib.pyplot as plt
 
-def plot_length_distribution(df, title, output_path):
+import matplotlib.pyplot as plt
+import pandas as pd
+
+
+def plot_length_distribution(df: pd.DataFrame, title: str, output_path: str | Path) -> None:
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
+
     plt.figure(figsize=(10, 5))
     plt.hist(df["len"], bins=30)
     plt.title(title)
@@ -13,9 +17,13 @@ def plot_length_distribution(df, title, output_path):
     plt.savefig(output_path, dpi=300)
     plt.close()
 
-def plot_positive_vs_negative(pos, neg, neg_label, title, output_path):
+
+def plot_positive_vs_negative(
+    pos: pd.DataFrame, neg: pd.DataFrame, neg_label: str, title: str, output_path: str | Path
+) -> None:
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
+
     plt.figure(figsize=(10, 5))
     plt.hist(pos["len"], bins=30, alpha=0.5, label="positive")
     plt.hist(neg["len"], bins=30, alpha=0.5, label=neg_label)

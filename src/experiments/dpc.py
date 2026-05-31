@@ -1,33 +1,40 @@
-import itertools
 from pathlib import Path
+
 import numpy as np
 import pandas as pd
-
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
-from sklearn.metrics import accuracy_score, balanced_accuracy_score, f1_score
-from sklearn.metrics import matthews_corrcoef, roc_auc_score
+from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
+from sklearn.metrics import (
+    accuracy_score,
+    balanced_accuracy_score,
+    f1_score,
+    matthews_corrcoef,
+    roc_auc_score,
+)
 from sklearn.model_selection import StratifiedKFold
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
 
-RANDOM_STATE = 50
-OUTPUT_DIR = Path("IB_PP_BG_HJ-PNW\\results\\classic_ml_results")
+from src.constants import DIPEPTIDES, RANDOM_STATE
+from src.experiments.physicochemical import TEST_IMBALANCED_PATH, TRAIN_IMBALANCED_PATH
+from src.paths import TEST_BALANCED_PATH, TRAIN_BALANCED_PATH
+
+OUTPUT_DIR = Path("results/classic_ml_results")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-AMINO_ACIDS = list("ACDEFGHIKLMNPQRSTVWY")
-DIPEPTIDES = ["".join(pair) for pair in itertools.product(AMINO_ACIDS, repeat=2)]
+
 
 # Konfiguracja ścieżek dla dwóch wariantów zbilansowania danych
 DATA_PATHS = {
     "balanced": {
-        "train": Path("IB_PP_BG_HJ-PNW\data\processed\dataset_CPP_1to1_train.csv"),
-        "test": Path("IB_PP_BG_HJ-PNW\data\processed\dataset_CPP_1to1_test.csv"),
+        "train": TRAIN_BALANCED_PATH,
+        "test": TEST_BALANCED_PATH,
     },
     "imbalanced": {
-        "train": Path("IB_PP_BG_HJ-PNW\data\processed\dataset_CPP_1to2_train.csv"),
-        "test": Path("IB_PP_BG_HJ-PNW\data\processed\dataset_CPP_1to2_test.csv"),
-    }
+        "train": TRAIN_IMBALANCED_PATH,
+        "test": TEST_IMBALANCED_PATH,
+    },
 }
+
 
 def load_data(path):
     df = pd.read_csv(path)
@@ -36,38 +43,44 @@ def load_data(path):
     df = df[df["Seq"] != ""].copy()
     return df
 
+
 def extract_dpc(seq):
     """Ekstrakcja cech DPC (Dipeptide Composition)."""
     length = len(seq)
     if length < 2:
         return [0.0] * 400
-    
+
     dp_counts = {dp: 0.0 for dp in DIPEPTIDES}
     for i in range(length - 1):
-        dp = seq[i:i+2]
+        dp = seq[i : i + 2]
         if dp in dp_counts:
             dp_counts[dp] += 1.0
-            
+
     denominator = length - 1
     return [dp_counts[dp] / denominator for dp in DIPEPTIDES]
+
 
 def build_features(df):
     """Zwraca macierz cech DPC dla danego DataFrame."""
     features = [extract_dpc(seq) for seq in df["Seq"]]
     return np.array(features)
 
+
 def make_model(model_name):
     """Inicjalizacja modeli klasyfikacji binarnej."""
     if model_name == "SVM":
-        return Pipeline([
-            ("scaler", StandardScaler()),
-            ("model", SVC(probability=True, random_state=RANDOM_STATE))
-        ])
+        return Pipeline(
+            [
+                ("scaler", StandardScaler()),
+                ("model", SVC(probability=True, random_state=RANDOM_STATE)),
+            ]
+        )
     elif model_name == "Random Forest":
         return RandomForestClassifier(random_state=RANDOM_STATE)
     elif model_name == "Gradient Boosting":
         return GradientBoostingClassifier(random_state=RANDOM_STATE)
     raise ValueError(f"Unknown model name: {model_name}")
+
 
 def calculate_metrics(y_true, y_pred, y_score):
     return {
@@ -78,10 +91,12 @@ def calculate_metrics(y_true, y_pred, y_score):
         "roc_auc": roc_auc_score(y_true, y_score),
     }
 
+
 def evaluate_model(model, X, y):
     y_pred = model.predict(X)
     y_score = model.predict_proba(X)[:, 1]
     return calculate_metrics(y, y_pred, y_score)
+
 
 def run_single_experiment(train_df, test_df, model_name, dataset_type):
     representation = "DPC"
@@ -113,8 +128,18 @@ def run_single_experiment(train_df, test_df, model_name, dataset_type):
     fold_results = pd.DataFrame(fold_rows)
 
     # Obliczanie statystyk z CV
-    mean_row = {"dataset": dataset_type, "model": model_name, "representation": representation, "stage": "cv_mean"}
-    std_row = {"dataset": dataset_type, "model": model_name, "representation": representation, "stage": "cv_std"}
+    mean_row = {
+        "dataset": dataset_type,
+        "model": model_name,
+        "representation": representation,
+        "stage": "cv_mean",
+    }
+    std_row = {
+        "dataset": dataset_type,
+        "model": model_name,
+        "representation": representation,
+        "stage": "cv_std",
+    }
     metric_names = ["accuracy", "balanced_accuracy", "f1", "mcc", "roc_auc"]
 
     for metric in metric_names:
@@ -126,11 +151,17 @@ def run_single_experiment(train_df, test_df, model_name, dataset_type):
     final_model.fit(X_train, y_train)
 
     test_metrics = evaluate_model(final_model, X_test, y_test)
-    test_row = {"dataset": dataset_type, "model": model_name, "representation": representation, "stage": "test"}
+    test_row = {
+        "dataset": dataset_type,
+        "model": model_name,
+        "representation": representation,
+        "stage": "test",
+    }
     test_row.update(test_metrics)
 
     summary = pd.DataFrame([mean_row, std_row, test_row])
     return fold_results, summary
+
 
 configs = ["SVM", "Random Forest", "Gradient Boosting"]
 
@@ -141,14 +172,9 @@ for dataset_type, paths in DATA_PATHS.items():
     print(f"Rozpoczęto obliczenia dla wariantu zbioru danych: {dataset_type}")
     train_df = load_data(paths["train"])
     test_df = load_data(paths["test"])
-    
+
     for model_name in configs:
-        fold_results, summary = run_single_experiment(
-            train_df,
-            test_df,
-            model_name,
-            dataset_type
-        )
+        fold_results, summary = run_single_experiment(train_df, test_df, model_name, dataset_type)
         all_folds.append(fold_results)
         all_summaries.append(summary)
 
@@ -159,3 +185,4 @@ final_folds.to_csv(OUTPUT_DIR / "classic_ml_dpc_cv_folds.csv", index=False)
 final_summary.to_csv(OUTPUT_DIR / "classic_ml_dpc_summary.csv", index=False)
 
 print("Eksperymenty dla klasycznego uczenia maszynowego (DPC) zakończone.")
+
