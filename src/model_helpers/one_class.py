@@ -17,13 +17,13 @@ if TYPE_CHECKING:
     from sklearn.base import BaseEstimator
 
 
-class OneClassModels(StrEnum):
+class OneClassModel(StrEnum):
     SVM = "One-Class SVM"
     IFOREST = "Isolation Forest"
 
 
 def evaluate_test_set_one_class(
-    model_name: OneClassModels,
+    model_name: OneClassModel,
     representation: str,
     x_train: np.ndarray,
     x_test: np.ndarray,
@@ -54,7 +54,7 @@ def evaluate_test_set_one_class(
 
 
 def train_fold_one_class(
-    model_name: OneClassModels,
+    model_name: OneClassModel,
     x_fold_train: np.ndarray,
     x_fold_val: np.ndarray,
     y_fold_val: np.ndarray,
@@ -75,15 +75,15 @@ def _convert_one_class_predictions(raw_predictions: np.ndarray) -> np.ndarray:
     return np.where(raw_predictions == -1, 1, 0)
 
 
-def _make_one_class_model(model_name: OneClassModels) -> BaseEstimator:
+def _make_one_class_model(model_name: OneClassModel) -> BaseEstimator:
     models = {
-        OneClassModels.SVM: lambda: Pipeline(
+        OneClassModel.SVM: lambda: Pipeline(
             steps=[
                 ("scaler", StandardScaler()),
                 ("model", OneClassSVM()),
             ]
         ),
-        OneClassModels.IFOREST: lambda: IsolationForest(random_state=RANDOM_STATE),
+        OneClassModel.IFOREST: lambda: IsolationForest(random_state=RANDOM_STATE),
     }
 
     return models[model_name]()

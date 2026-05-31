@@ -3,7 +3,7 @@ from __future__ import annotations
 import pandas as pd
 
 from src.model_helpers.fold_train import fold_train
-from src.model_helpers.one_class import OneClassModels, evaluate_test_set_one_class
+from src.model_helpers.one_class import OneClassModel, evaluate_test_set_one_class
 from src.paths import TEST_BALANCED_PATH, TRAIN_BALANCED_PATH
 from src.utils import load_data as data_loader
 from src.utils.representations import Representation, extract_aac, extract_features_dataframe
@@ -13,8 +13,8 @@ from src.utils.runner import (
 )
 
 one_class_ml_configs = [
-    (OneClassModels.SVM, "balanced", TRAIN_BALANCED_PATH, TEST_BALANCED_PATH),
-    (OneClassModels.IFOREST, "balanced", TRAIN_BALANCED_PATH, TEST_BALANCED_PATH),
+    (OneClassModel.SVM, "balanced", TRAIN_BALANCED_PATH, TEST_BALANCED_PATH),
+    (OneClassModel.IFOREST, "balanced", TRAIN_BALANCED_PATH, TEST_BALANCED_PATH),
 ]
 
 output_dir_aac_oneclass = build_output_dir("results/one_class/aac")
@@ -34,9 +34,9 @@ if __name__ == "__main__":
             train_df = data_loader.load_data(train_path)
             test_df = data_loader.load_data(test_path)
 
-            x_train = extract_features_dataframe(train_df, extract_aac)
+            x_train = extract_features_dataframe(train_df, representation)
             y_train = train_df["CPP"].astype(int).to_numpy()
-            x_test = extract_features_dataframe(test_df, extract_aac)
+            x_test = extract_features_dataframe(test_df, representation)
             y_test = test_df["CPP"].astype(int).to_numpy()
 
             fold_results, summary = fold_train(

@@ -4,7 +4,7 @@ import pandas as pd
 
 from src.model_helpers.classic_ml import ClassicalModel, evaluate_test_set_classic_ml
 from src.model_helpers.fold_train import fold_train
-from src.model_helpers.one_class import OneClassModels
+from src.model_helpers.one_class import OneClassModel
 from src.paths import (
     TEST_BALANCED_PATH,
     TEST_IMBALANCED_PATH,
@@ -12,7 +12,7 @@ from src.paths import (
     TRAIN_IMBALANCED_PATH,
 )
 from src.utils import load_data as data_loader
-from src.utils.representations import Representation, extract_aac, extract_features_dataframe
+from src.utils.representations import Representation, extract_features_dataframe
 from src.utils.runner import (
     build_output_dir,
     save_results,
@@ -27,11 +27,6 @@ classical_ml_configs = [
     (ClassicalModel.GRADIENT_BOOSTING, "imbalanced", TRAIN_IMBALANCED_PATH, TEST_IMBALANCED_PATH),
 ]
 
-
-one_class_ml_configs = [
-    (OneClassModels.SVM, "balanced", TRAIN_BALANCED_PATH, TEST_BALANCED_PATH),
-    (OneClassModels.IFOREST, "balanced", TRAIN_BALANCED_PATH, TEST_BALANCED_PATH),
-]
 
 output_dir_aac_classical = build_output_dir("results/classical_ml/aac")
 output_dir_dpc_classical = build_output_dir("results/classical_ml/dpc")
@@ -53,9 +48,9 @@ if __name__ == "__main__":
             train_df = data_loader.load_data(train_path)
             test_df = data_loader.load_data(test_path)
 
-            x_train = extract_features_dataframe(train_df, extract_aac)
+            x_train = extract_features_dataframe(train_df, representation)
             y_train = train_df["CPP"].astype(int).to_numpy()
-            x_test = extract_features_dataframe(test_df, extract_aac)
+            x_test = extract_features_dataframe(test_df, representation)
             y_test = test_df["CPP"].astype(int).to_numpy()
 
             fold_results, summary = fold_train(

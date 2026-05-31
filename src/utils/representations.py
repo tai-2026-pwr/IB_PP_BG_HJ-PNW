@@ -51,8 +51,20 @@ def extract_physicochemical(seq: str) -> list[float]:
 
 def extract_features_dataframe(
     df: pd.DataFrame,
-    feature_extractor: Callable[[str], list[float]],
+    representation: Representation,
 ) -> np.ndarray:
     """Extract features from DataFrame using a generic function."""
-
+    feature_extractor = _get_extractor(representation)
     return np.array([feature_extractor(seq) for seq in df["Seq"]])
+
+
+def _get_extractor(representation: Representation) -> Callable[[str], list[float]]:
+    match representation:
+        case Representation.AAC:
+            return extract_aac
+        case Representation.DPC:
+            return extract_dpc_features
+        case Representation.PHYSICOCHEMICAL:
+            return extract_physicochemical
+        case Representation.ESM2:
+            raise NotImplementedError
