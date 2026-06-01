@@ -1,4 +1,5 @@
 from __future__ import annotations
+from tqdm import tqdm
 
 import dataclasses
 from enum import StrEnum
@@ -30,10 +31,17 @@ class DLModel(StrEnum):
 def load_embeddings(
     embeddings_dir: Path, dataset_type: str
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
-    x_train = np.load(embeddings_dir / f"train_{dataset_type}_X.npy")
+
+    with np.load(embeddings_dir / f"train_{dataset_type}_X.npz") as data:
+        x_train = data["X"]
+
+    with np.load(embeddings_dir / f"test_{dataset_type}_X.npz") as data:
+        x_test = data["X"]
+
+    # Labels are standard uncompressed .npy files, so load them normally
     y_train = np.load(embeddings_dir / f"train_{dataset_type}_y.npy")
-    x_test = np.load(embeddings_dir / f"test_{dataset_type}_X.npy")
     y_test = np.load(embeddings_dir / f"test_{dataset_type}_y.npy")
+
     return x_train, y_train, x_test, y_test
 
 
@@ -48,7 +56,7 @@ def train_fold_dl(
     batch_size: int = BATCH_SIZE,
 ) -> Metrics:
     """Instantiate a DL model and run the training pipeline for a single CV fold."""
-    model = _make_pytorch_model(model_name, input_dim=x_fold_train.shape[1]).to(DEVICE)
+    model = _make_pytorch_model(model_name, input_dim=x_fold_train.shape[-1]).to(DEVICE)
 
     _train_model(model, x_fold_train, y_fold_train, epochs, lr, batch_size)
 
@@ -89,7 +97,7 @@ def _train_final_model_pytorch(
     batch_size: int = BATCH_SIZE,
 ) -> nn.Module:
     """Train the final production PyTorch model on the full training set."""
-    model = _make_pytorch_model(model_name, input_dim=x_train.shape[1]).to(DEVICE)
+    model = _make_pytorch_model(model_name, input_dim=x_train.shape[-1]).to(DEVICE)
     _train_model(model, x_train, y_train, epochs, lr, batch_size)
     return model
 
@@ -108,7 +116,7 @@ def _train_model(
     loader = _build_loaders(x, y, batch_size, shuffle=True)
 
     model.train()
-    for _ in range(epochs):
+    for _ in tqdm(range(epochs), desc="  Training Epochs", leave=False):
         for x_batch, y_batch in loader:
             x_batch, y_batch = x_batch.to(DEVICE), y_batch.to(DEVICE)
 

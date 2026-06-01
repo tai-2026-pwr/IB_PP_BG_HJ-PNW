@@ -3,6 +3,7 @@ from collections import defaultdict
 
 import numpy as np
 import pandas as pd
+from tqdm import tqdm
 
 from src.model_helpers.classic_ml import ClassicalModel, train_fold_classic_ml
 from src.model_helpers.dl.dl import DLModel, train_fold_dl
@@ -27,7 +28,9 @@ def fold_train(
     fold_rows: list[dict] = []
     metrics: defaultdict[str, list[float]] = defaultdict(list)
 
-    for fold_number, (train_index, val_index) in enumerate(cv, start=1):
+    for fold_number, (train_index, val_index) in enumerate(
+        tqdm(cv, total=n_splits, desc=f"CV Folds ({model_name.value})"), start=1
+    ):
         fold_metrics = _get_fold_metrics(
             model_name=model_name,
             x_train=x_train,

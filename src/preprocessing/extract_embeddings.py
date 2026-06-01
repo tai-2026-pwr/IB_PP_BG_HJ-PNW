@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import torch
+from tqdm import tqdm
 from transformers import EsmModel, EsmTokenizer, logging
 
 from src.constants import DEVICE
@@ -12,10 +13,12 @@ from src.paths import (
     TRAIN_BALANCED_PATH,
     TRAIN_IMBALANCED_PATH,
 )
-from src.preprocessing.constatns import BATCH_SIZE, ESM_MODEL_NAME, MAX_LEN
+from src.preprocessing.constatns import ESM_MODEL_NAME, MAX_LEN
 from src.utils.load_data import load_data
 
 logging.set_verbosity_error()
+
+BATCH_SIZE = 2
 
 
 def get_embeddings(
@@ -25,13 +28,13 @@ def get_embeddings(
     all_per_token: list[np.ndarray] = []
     model.eval()
 
-    for i in range(0, len(sequences), BATCH_SIZE):
+    for i in tqdm(range(0, len(sequences), BATCH_SIZE), desc="Extracting"):
         batch = sequences[i : i + BATCH_SIZE]
 
         inputs = tokenizer(
             batch,
             return_tensors="pt",
-            padding="max_length",
+            padding=True,
             truncation=True,
             max_length=MAX_LEN + 2,  # +2 for [CLS] and [EOS] tokens
         ).to(DEVICE)
@@ -44,13 +47,25 @@ def get_embeddings(
         # mean pooling → (batch, hidden_size)
         mean_emb = hidden.mean(dim=1).cpu().numpy()
 
-        # per-token: strip [CLS] and [EOS] → (batch, MAX_LEN, hidden_size)
-        per_token_emb = hidden[:, 1 : MAX_LEN + 1, :].cpu().numpy()
+        # per-token: strip [CLS] and [EOS]
+        # shape is (batch, current_batch_len, hidden_size)
+        per_token_emb = hidden[:, 1:-1, :].cpu().numpy()
+
+        # Pad the sequences back to MAX_LEN so np.vstack works later
+        current_len = per_token_emb.shape[1]
+        pad_amount = MAX_LEN - current_len
+
+        if pad_amount > 0:
+            # Pad the second dimension (sequence length) with zeros
+            per_token_emb = np.pad(
+                per_token_emb, pad_width=((0, 0), (0, pad_amount), (0, 0)), mode="constant"
+            )
+        elif pad_amount < 0:
+            # Truncate if somehow larger than MAX_LEN
+            per_token_emb = per_token_emb[:, :MAX_LEN, :]
 
         all_mean.append(mean_emb)
         all_per_token.append(per_token_emb)
-
-        print(f"  {min(i + BATCH_SIZE, len(sequences))}/{len(sequences)}")
 
     return np.vstack(all_mean), np.vstack(all_per_token)
 
