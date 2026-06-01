@@ -2,35 +2,49 @@ from __future__ import annotations
 
 import pandas as pd
 
+from src.model_helpers.classic_ml import ClassicalModel, evaluate_test_set_classic_ml
 from src.model_helpers.fold_train import fold_train
-from src.model_helpers.one_class import OneClassModel, evaluate_test_set_one_class
-from src.paths import TEST_BALANCED_PATH, TRAIN_BALANCED_PATH
+from src.model_helpers.one_class import OneClassModel
+from src.paths import (
+    TEST_BALANCED_PATH,
+    TEST_IMBALANCED_PATH,
+    TRAIN_BALANCED_PATH,
+    TRAIN_IMBALANCED_PATH,
+)
 from src.utils import load_data as data_loader
-from src.utils.representations import Representation, extract_aac, extract_features_dataframe
+from src.utils.representations import Representation, extract_features_dataframe
 from src.utils.runner import (
     build_output_dir,
     save_results,
 )
 
-one_class_ml_configs = [
-    (OneClassModel.SVM, "balanced", TRAIN_BALANCED_PATH, TEST_BALANCED_PATH),
-    (OneClassModel.IFOREST, "balanced", TRAIN_BALANCED_PATH, TEST_BALANCED_PATH),
+classical_ml_configs = [
+    (ClassicalModel.SVM, "balanced", TRAIN_BALANCED_PATH, TEST_BALANCED_PATH),
+    (ClassicalModel.SVM, "imbalanced", TRAIN_IMBALANCED_PATH, TEST_IMBALANCED_PATH),
+    (ClassicalModel.RANDOM_FOREST, "balanced", TRAIN_BALANCED_PATH, TEST_BALANCED_PATH),
+    (ClassicalModel.RANDOM_FOREST, "imbalanced", TRAIN_IMBALANCED_PATH, TEST_IMBALANCED_PATH),
+    (ClassicalModel.GRADIENT_BOOSTING, "balanced", TRAIN_BALANCED_PATH, TEST_BALANCED_PATH),
+    (ClassicalModel.GRADIENT_BOOSTING, "imbalanced", TRAIN_IMBALANCED_PATH, TEST_IMBALANCED_PATH),
 ]
 
-output_dir_aac_oneclass = build_output_dir("results/one_class/aac")
-output_dir_physicochemical_oneclass = build_output_dir("results/one_class/physicochemical")
 
-representations_configs_one_class = [
-    (Representation.AAC, output_dir_aac_oneclass),
-    (Representation.PHYSICOCHEMICAL, output_dir_physicochemical_oneclass),
+output_dir_aac_classical = build_output_dir("results/classical_ml/aac")
+output_dir_dpc_classical = build_output_dir("results/classical_ml/dpc")
+output_dir_physicochemical_classical = build_output_dir("results/classical_ml/physicochemical")
+
+representations_configs_classic_ml = [
+    (Representation.AAC, output_dir_aac_classical),
+    (Representation.DPC, output_dir_dpc_classical),
+    (Representation.PHYSICOCHEMICAL, output_dir_physicochemical_classical),
 ]
+
 
 if __name__ == "__main__":
-    for representation, output_dir in representations_configs_one_class:
+    for representation, output_dir in representations_configs_classic_ml:
         all_folds = []
         all_summaries = []
 
-        for model_name, dataset_type, train_path, test_path in one_class_ml_configs:
+        for model_name, dataset_type, train_path, test_path in classical_ml_configs:
             train_df = data_loader.load_data(train_path)
             test_df = data_loader.load_data(test_path)
 
@@ -48,10 +62,11 @@ if __name__ == "__main__":
                 n_splits=10,
             )
 
-            test_row = evaluate_test_set_one_class(
+            test_row = evaluate_test_set_classic_ml(
                 model_name=model_name,
                 representation=representation,
                 x_train=x_train,
+                y_train=y_train,
                 x_test=x_test,
                 y_test=y_test,
             )
