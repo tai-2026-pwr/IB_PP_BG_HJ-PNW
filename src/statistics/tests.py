@@ -5,12 +5,14 @@ from scipy.stats import wilcoxon
 RESULTS_DIR = Path("results")
 OUTPUT_DIR = RESULTS_DIR / "statistics"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-MAIN_METRIC = "balanced_accuracy"
+MAIN_METRIC = "mcc"
 CV_FILES = [
-    RESULTS_DIR / "aac" / "cv_folds.csv",
-    RESULTS_DIR / "physicochemical" / "cv_folds.csv",
+    RESULTS_DIR / "classical_ml" / "aac" / "cv_folds.csv",
+    RESULTS_DIR / "classical_ml" / "dpc" / "cv_folds.csv",
+    RESULTS_DIR / "classical_ml" / "physicochemical" / "cv_folds.csv",
+    RESULTS_DIR / "dl" / "cv_folds.csv",
     RESULTS_DIR / "one_class" / "one_class_cv_folds.csv",
-    RESULTS_DIR / "cnn" / "cv_folds.csv",]
+]
 
 all_data = []
 
@@ -78,7 +80,5 @@ results_df = pd.DataFrame(results)
 if len(results_df) > 0:
     results_df = results_df.sort_values("p_value")
 
-output_path = OUTPUT_DIR / "wilcoxon_results_balanced_accuracy.csv"
+output_path = OUTPUT_DIR / "wilcoxon_results_mcc.csv"
 results_df.to_csv(output_path, index=False)
-
-#to do: maybe use more folds to get significant results

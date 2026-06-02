@@ -1,121 +1,232 @@
 model_1,representation_1,dataset_1,model_2,representation_2,dataset_2,metric,mean_1,mean_2,wilcoxon_statistic,p_value,significant,better_model
-SVM,AAC,balanced,SVM,Physicochemical,imbalanced,balanced_accuracy,0.889805347905862,0.8422454498782059,0.0,0.0625,False,SVM | AAC | balanced
-SVM,AAC,balanced,SVM,Physicochemical,balanced,balanced_accuracy,0.889805347905862,0.8618810625122748,0.0,0.0625,False,SVM | AAC | balanced
-SVM,AAC,balanced,Isolation Forest,AAC,balanced,balanced_accuracy,0.889805347905862,0.674288253375801,0.0,0.0625,False,SVM | AAC | balanced
-SVM,AAC,balanced,Isolation Forest,Physicochemical,balanced,balanced_accuracy,0.889805347905862,0.564304675402572,0.0,0.0625,False,SVM | AAC | balanced
-SVM,AAC,balanced,One-Class SVM,Physicochemical,balanced,balanced_accuracy,0.889805347905862,0.515741787378084,0.0,0.0625,False,SVM | AAC | balanced
-SVM,AAC,balanced,One-Class SVM,AAC,balanced,balanced_accuracy,0.889805347905862,0.5485022796645513,0.0,0.0625,False,SVM | AAC | balanced
-SVM,AAC,balanced,Gradient Boosting,Physicochemical,imbalanced,balanced_accuracy,0.889805347905862,0.8496577985749305,0.0,0.0625,False,SVM | AAC | balanced
-SVM,AAC,balanced,Gradient Boosting,Physicochemical,balanced,balanced_accuracy,0.889805347905862,0.8629357176188565,0.0,0.0625,False,SVM | AAC | balanced
-SVM,AAC,imbalanced,Gradient Boosting,Physicochemical,imbalanced,balanced_accuracy,0.8804895946028857,0.8496577985749305,0.0,0.0625,False,SVM | AAC | imbalanced
-SVM,AAC,imbalanced,One-Class SVM,AAC,balanced,balanced_accuracy,0.8804895946028857,0.5485022796645513,0.0,0.0625,False,SVM | AAC | imbalanced
-SVM,AAC,imbalanced,One-Class SVM,Physicochemical,balanced,balanced_accuracy,0.8804895946028857,0.515741787378084,0.0,0.0625,False,SVM | AAC | imbalanced
-SVM,AAC,imbalanced,Isolation Forest,AAC,balanced,balanced_accuracy,0.8804895946028857,0.674288253375801,0.0,0.0625,False,SVM | AAC | imbalanced
-SVM,AAC,imbalanced,Isolation Forest,Physicochemical,balanced,balanced_accuracy,0.8804895946028857,0.564304675402572,0.0,0.0625,False,SVM | AAC | imbalanced
-SVM,AAC,imbalanced,SVM,Physicochemical,imbalanced,balanced_accuracy,0.8804895946028857,0.8422454498782059,0.0,0.0625,False,SVM | AAC | imbalanced
-SVM,AAC,imbalanced,Gradient Boosting,AAC,imbalanced,balanced_accuracy,0.8804895946028857,0.8746641731454334,0.0,0.0625,False,SVM | AAC | imbalanced
-SVM,AAC,imbalanced,Random Forest,AAC,imbalanced,balanced_accuracy,0.8804895946028857,0.8955735671461331,0.0,0.0625,False,Random Forest | AAC | imbalanced
-Random Forest,AAC,balanced,Gradient Boosting,AAC,imbalanced,balanced_accuracy,0.8965895618524268,0.8746641731454334,0.0,0.0625,False,Random Forest | AAC | balanced
-Random Forest,AAC,balanced,Gradient Boosting,AAC,balanced,balanced_accuracy,0.8965895618524268,0.8784081263076452,0.0,0.0625,False,Random Forest | AAC | balanced
-Random Forest,AAC,imbalanced,SVM,Physicochemical,imbalanced,balanced_accuracy,0.8955735671461331,0.8422454498782059,0.0,0.0625,False,Random Forest | AAC | imbalanced
-Random Forest,AAC,imbalanced,Random Forest,Physicochemical,imbalanced,balanced_accuracy,0.8955735671461331,0.8756444648050297,0.0,0.0625,False,Random Forest | AAC | imbalanced
-Random Forest,AAC,imbalanced,Gradient Boosting,AAC,imbalanced,balanced_accuracy,0.8955735671461331,0.8746641731454334,0.0,0.0625,False,Random Forest | AAC | imbalanced
-Random Forest,AAC,imbalanced,Gradient Boosting,AAC,balanced,balanced_accuracy,0.8955735671461331,0.8784081263076452,0.0,0.0625,False,Random Forest | AAC | imbalanced
-Random Forest,AAC,balanced,Isolation Forest,Physicochemical,balanced,balanced_accuracy,0.8965895618524268,0.564304675402572,0.0,0.0625,False,Random Forest | AAC | balanced
-Random Forest,AAC,imbalanced,SVM,Physicochemical,balanced,balanced_accuracy,0.8955735671461331,0.8618810625122748,0.0,0.0625,False,Random Forest | AAC | imbalanced
-Random Forest,AAC,balanced,Isolation Forest,AAC,balanced,balanced_accuracy,0.8965895618524268,0.674288253375801,0.0,0.0625,False,Random Forest | AAC | balanced
-Random Forest,AAC,balanced,One-Class SVM,Physicochemical,balanced,balanced_accuracy,0.8965895618524268,0.515741787378084,0.0,0.0625,False,Random Forest | AAC | balanced
-Random Forest,AAC,balanced,Gradient Boosting,Physicochemical,imbalanced,balanced_accuracy,0.8965895618524268,0.8496577985749305,0.0,0.0625,False,Random Forest | AAC | balanced
-Random Forest,AAC,balanced,One-Class SVM,AAC,balanced,balanced_accuracy,0.8965895618524268,0.5485022796645513,0.0,0.0625,False,Random Forest | AAC | balanced
-Random Forest,AAC,balanced,Gradient Boosting,Physicochemical,balanced,balanced_accuracy,0.8965895618524268,0.8629357176188565,0.0,0.0625,False,Random Forest | AAC | balanced
-Random Forest,AAC,balanced,Random Forest,Physicochemical,balanced,balanced_accuracy,0.8965895618524268,0.8793899586932159,0.0,0.0625,False,Random Forest | AAC | balanced
-Random Forest,AAC,balanced,SVM,Physicochemical,imbalanced,balanced_accuracy,0.8965895618524268,0.8422454498782059,0.0,0.0625,False,Random Forest | AAC | balanced
-Random Forest,AAC,balanced,SVM,Physicochemical,balanced,balanced_accuracy,0.8965895618524268,0.8618810625122748,0.0,0.0625,False,Random Forest | AAC | balanced
-Gradient Boosting,AAC,balanced,One-Class SVM,Physicochemical,balanced,balanced_accuracy,0.8784081263076452,0.515741787378084,0.0,0.0625,False,Gradient Boosting | AAC | balanced
-Gradient Boosting,AAC,balanced,Isolation Forest,AAC,balanced,balanced_accuracy,0.8784081263076452,0.674288253375801,0.0,0.0625,False,Gradient Boosting | AAC | balanced
-Random Forest,AAC,imbalanced,One-Class SVM,AAC,balanced,balanced_accuracy,0.8955735671461331,0.5485022796645513,0.0,0.0625,False,Random Forest | AAC | imbalanced
-Random Forest,AAC,imbalanced,One-Class SVM,Physicochemical,balanced,balanced_accuracy,0.8955735671461331,0.515741787378084,0.0,0.0625,False,Random Forest | AAC | imbalanced
-Random Forest,AAC,imbalanced,Isolation Forest,AAC,balanced,balanced_accuracy,0.8955735671461331,0.674288253375801,0.0,0.0625,False,Random Forest | AAC | imbalanced
-Random Forest,AAC,imbalanced,Isolation Forest,Physicochemical,balanced,balanced_accuracy,0.8955735671461331,0.564304675402572,0.0,0.0625,False,Random Forest | AAC | imbalanced
-Gradient Boosting,AAC,balanced,Gradient Boosting,Physicochemical,balanced,balanced_accuracy,0.8784081263076452,0.8629357176188565,0.0,0.0625,False,Gradient Boosting | AAC | balanced
-Gradient Boosting,AAC,balanced,SVM,Physicochemical,imbalanced,balanced_accuracy,0.8784081263076452,0.8422454498782059,0.0,0.0625,False,Gradient Boosting | AAC | balanced
-Gradient Boosting,AAC,balanced,One-Class SVM,AAC,balanced,balanced_accuracy,0.8784081263076452,0.5485022796645513,0.0,0.0625,False,Gradient Boosting | AAC | balanced
-Gradient Boosting,AAC,balanced,Gradient Boosting,Physicochemical,imbalanced,balanced_accuracy,0.8784081263076452,0.8496577985749305,0.0,0.0625,False,Gradient Boosting | AAC | balanced
-Random Forest,AAC,imbalanced,Gradient Boosting,Physicochemical,imbalanced,balanced_accuracy,0.8955735671461331,0.8496577985749305,0.0,0.0625,False,Random Forest | AAC | imbalanced
-Random Forest,AAC,imbalanced,Gradient Boosting,Physicochemical,balanced,balanced_accuracy,0.8955735671461331,0.8629357176188565,0.0,0.0625,False,Random Forest | AAC | imbalanced
-SVM,Physicochemical,imbalanced,Isolation Forest,Physicochemical,balanced,balanced_accuracy,0.8422454498782059,0.564304675402572,0.0,0.0625,False,SVM | Physicochemical | imbalanced
-SVM,Physicochemical,imbalanced,Isolation Forest,AAC,balanced,balanced_accuracy,0.8422454498782059,0.674288253375801,0.0,0.0625,False,SVM | Physicochemical | imbalanced
-Random Forest,Physicochemical,balanced,One-Class SVM,AAC,balanced,balanced_accuracy,0.8793899586932159,0.5485022796645513,0.0,0.0625,False,Random Forest | Physicochemical | balanced
-Random Forest,Physicochemical,balanced,Gradient Boosting,Physicochemical,balanced,balanced_accuracy,0.8793899586932159,0.8629357176188565,0.0,0.0625,False,Random Forest | Physicochemical | balanced
-SVM,Physicochemical,balanced,One-Class SVM,AAC,balanced,balanced_accuracy,0.8618810625122748,0.5485022796645513,0.0,0.0625,False,SVM | Physicochemical | balanced
-SVM,Physicochemical,balanced,One-Class SVM,Physicochemical,balanced,balanced_accuracy,0.8618810625122748,0.515741787378084,0.0,0.0625,False,SVM | Physicochemical | balanced
-SVM,Physicochemical,balanced,Isolation Forest,AAC,balanced,balanced_accuracy,0.8618810625122748,0.674288253375801,0.0,0.0625,False,SVM | Physicochemical | balanced
-SVM,Physicochemical,balanced,Isolation Forest,Physicochemical,balanced,balanced_accuracy,0.8618810625122748,0.564304675402572,0.0,0.0625,False,SVM | Physicochemical | balanced
-SVM,Physicochemical,imbalanced,Random Forest,Physicochemical,balanced,balanced_accuracy,0.8422454498782059,0.8793899586932159,0.0,0.0625,False,Random Forest | Physicochemical | balanced
-SVM,Physicochemical,imbalanced,Random Forest,Physicochemical,imbalanced,balanced_accuracy,0.8422454498782059,0.8756444648050297,0.0,0.0625,False,Random Forest | Physicochemical | imbalanced
-SVM,Physicochemical,imbalanced,One-Class SVM,Physicochemical,balanced,balanced_accuracy,0.8422454498782059,0.515741787378084,0.0,0.0625,False,SVM | Physicochemical | imbalanced
-SVM,Physicochemical,imbalanced,One-Class SVM,AAC,balanced,balanced_accuracy,0.8422454498782059,0.5485022796645513,0.0,0.0625,False,SVM | Physicochemical | imbalanced
-Gradient Boosting,AAC,imbalanced,One-Class SVM,Physicochemical,balanced,balanced_accuracy,0.8746641731454334,0.515741787378084,0.0,0.0625,False,Gradient Boosting | AAC | imbalanced
-Gradient Boosting,AAC,imbalanced,Isolation Forest,AAC,balanced,balanced_accuracy,0.8746641731454334,0.674288253375801,0.0,0.0625,False,Gradient Boosting | AAC | imbalanced
-Gradient Boosting,AAC,imbalanced,Isolation Forest,Physicochemical,balanced,balanced_accuracy,0.8746641731454334,0.564304675402572,0.0,0.0625,False,Gradient Boosting | AAC | imbalanced
-SVM,Physicochemical,balanced,Random Forest,Physicochemical,balanced,balanced_accuracy,0.8618810625122748,0.8793899586932159,0.0,0.0625,False,Random Forest | Physicochemical | balanced
-Gradient Boosting,AAC,imbalanced,One-Class SVM,AAC,balanced,balanced_accuracy,0.8746641731454334,0.5485022796645513,0.0,0.0625,False,Gradient Boosting | AAC | imbalanced
-Gradient Boosting,AAC,imbalanced,Gradient Boosting,Physicochemical,imbalanced,balanced_accuracy,0.8746641731454334,0.8496577985749305,0.0,0.0625,False,Gradient Boosting | AAC | imbalanced
-Gradient Boosting,AAC,imbalanced,SVM,Physicochemical,imbalanced,balanced_accuracy,0.8746641731454334,0.8422454498782059,0.0,0.0625,False,Gradient Boosting | AAC | imbalanced
-Gradient Boosting,AAC,balanced,Isolation Forest,Physicochemical,balanced,balanced_accuracy,0.8784081263076452,0.564304675402572,0.0,0.0625,False,Gradient Boosting | AAC | balanced
-One-Class SVM,AAC,balanced,Isolation Forest,Physicochemical,balanced,balanced_accuracy,0.5485022796645513,0.564304675402572,0.0,0.0625,False,Isolation Forest | Physicochemical | balanced
-One-Class SVM,Physicochemical,balanced,Isolation Forest,AAC,balanced,balanced_accuracy,0.515741787378084,0.674288253375801,0.0,0.0625,False,Isolation Forest | AAC | balanced
-One-Class SVM,AAC,balanced,One-Class SVM,Physicochemical,balanced,balanced_accuracy,0.5485022796645513,0.515741787378084,0.0,0.0625,False,One-Class SVM | AAC | balanced
-One-Class SVM,AAC,balanced,Isolation Forest,AAC,balanced,balanced_accuracy,0.5485022796645513,0.674288253375801,0.0,0.0625,False,Isolation Forest | AAC | balanced
-One-Class SVM,Physicochemical,balanced,Isolation Forest,Physicochemical,balanced,balanced_accuracy,0.515741787378084,0.564304675402572,0.0,0.0625,False,Isolation Forest | Physicochemical | balanced
-Isolation Forest,AAC,balanced,Isolation Forest,Physicochemical,balanced,balanced_accuracy,0.674288253375801,0.564304675402572,0.0,0.0625,False,Isolation Forest | AAC | balanced
-Gradient Boosting,Physicochemical,imbalanced,Isolation Forest,Physicochemical,balanced,balanced_accuracy,0.8496577985749305,0.564304675402572,0.0,0.0625,False,Gradient Boosting | Physicochemical | imbalanced
-Gradient Boosting,Physicochemical,imbalanced,Isolation Forest,AAC,balanced,balanced_accuracy,0.8496577985749305,0.674288253375801,0.0,0.0625,False,Gradient Boosting | Physicochemical | imbalanced
-Gradient Boosting,Physicochemical,imbalanced,One-Class SVM,Physicochemical,balanced,balanced_accuracy,0.8496577985749305,0.515741787378084,0.0,0.0625,False,Gradient Boosting | Physicochemical | imbalanced
-Gradient Boosting,Physicochemical,balanced,Isolation Forest,Physicochemical,balanced,balanced_accuracy,0.8629357176188565,0.564304675402572,0.0,0.0625,False,Gradient Boosting | Physicochemical | balanced
-Random Forest,Physicochemical,imbalanced,One-Class SVM,AAC,balanced,balanced_accuracy,0.8756444648050297,0.5485022796645513,0.0,0.0625,False,Random Forest | Physicochemical | imbalanced
-Random Forest,Physicochemical,imbalanced,One-Class SVM,Physicochemical,balanced,balanced_accuracy,0.8756444648050297,0.515741787378084,0.0,0.0625,False,Random Forest | Physicochemical | imbalanced
-Random Forest,Physicochemical,imbalanced,Gradient Boosting,Physicochemical,imbalanced,balanced_accuracy,0.8756444648050297,0.8496577985749305,0.0,0.0625,False,Random Forest | Physicochemical | imbalanced
-Random Forest,Physicochemical,balanced,Isolation Forest,Physicochemical,balanced,balanced_accuracy,0.8793899586932159,0.564304675402572,0.0,0.0625,False,Random Forest | Physicochemical | balanced
-Random Forest,Physicochemical,balanced,Isolation Forest,AAC,balanced,balanced_accuracy,0.8793899586932159,0.674288253375801,0.0,0.0625,False,Random Forest | Physicochemical | balanced
-Random Forest,Physicochemical,balanced,One-Class SVM,Physicochemical,balanced,balanced_accuracy,0.8793899586932159,0.515741787378084,0.0,0.0625,False,Random Forest | Physicochemical | balanced
-Random Forest,Physicochemical,imbalanced,Isolation Forest,Physicochemical,balanced,balanced_accuracy,0.8756444648050297,0.564304675402572,0.0,0.0625,False,Random Forest | Physicochemical | imbalanced
-Random Forest,Physicochemical,imbalanced,Isolation Forest,AAC,balanced,balanced_accuracy,0.8756444648050297,0.674288253375801,0.0,0.0625,False,Random Forest | Physicochemical | imbalanced
-Gradient Boosting,Physicochemical,balanced,One-Class SVM,AAC,balanced,balanced_accuracy,0.8629357176188565,0.5485022796645513,0.0,0.0625,False,Gradient Boosting | Physicochemical | balanced
-Gradient Boosting,Physicochemical,imbalanced,One-Class SVM,AAC,balanced,balanced_accuracy,0.8496577985749305,0.5485022796645513,0.0,0.0625,False,Gradient Boosting | Physicochemical | imbalanced
-Gradient Boosting,Physicochemical,balanced,Isolation Forest,AAC,balanced,balanced_accuracy,0.8629357176188565,0.674288253375801,0.0,0.0625,False,Gradient Boosting | Physicochemical | balanced
-Gradient Boosting,Physicochemical,balanced,One-Class SVM,Physicochemical,balanced,balanced_accuracy,0.8629357176188565,0.515741787378084,0.0,0.0625,False,Gradient Boosting | Physicochemical | balanced
-SVM,AAC,balanced,Random Forest,Physicochemical,balanced,balanced_accuracy,0.889805347905862,0.8793899586932159,1.0,0.125,False,SVM | AAC | balanced
-SVM,AAC,balanced,Gradient Boosting,AAC,imbalanced,balanced_accuracy,0.889805347905862,0.8746641731454334,1.0,0.125,False,SVM | AAC | balanced
-SVM,AAC,imbalanced,Random Forest,AAC,balanced,balanced_accuracy,0.8804895946028857,0.8965895618524268,1.0,0.125,False,Random Forest | AAC | balanced
-Random Forest,AAC,imbalanced,Random Forest,Physicochemical,balanced,balanced_accuracy,0.8955735671461331,0.8793899586932159,1.0,0.125,False,Random Forest | AAC | imbalanced
-SVM,Physicochemical,imbalanced,Gradient Boosting,Physicochemical,imbalanced,balanced_accuracy,0.8422454498782059,0.8496577985749305,1.0,0.125,False,Gradient Boosting | Physicochemical | imbalanced
-Random Forest,AAC,balanced,Random Forest,Physicochemical,imbalanced,balanced_accuracy,0.8965895618524268,0.8756444648050297,1.0,0.125,False,Random Forest | AAC | balanced
-Random Forest,Physicochemical,balanced,Gradient Boosting,Physicochemical,imbalanced,balanced_accuracy,0.8793899586932159,0.8496577985749305,2.0,0.1875,False,Random Forest | Physicochemical | balanced
-SVM,AAC,balanced,Gradient Boosting,AAC,balanced,balanced_accuracy,0.889805347905862,0.8784081263076452,2.0,0.1875,False,SVM | AAC | balanced
-Gradient Boosting,AAC,balanced,SVM,Physicochemical,balanced,balanced_accuracy,0.8784081263076452,0.8618810625122748,2.0,0.1875,False,Gradient Boosting | AAC | balanced
-SVM,Physicochemical,imbalanced,Gradient Boosting,Physicochemical,balanced,balanced_accuracy,0.8422454498782059,0.8629357176188565,2.0,0.1875,False,Gradient Boosting | Physicochemical | balanced
-SVM,AAC,imbalanced,SVM,Physicochemical,balanced,balanced_accuracy,0.8804895946028857,0.8618810625122748,3.0,0.3125,False,SVM | AAC | imbalanced
-SVM,AAC,balanced,Random Forest,Physicochemical,imbalanced,balanced_accuracy,0.889805347905862,0.8756444648050297,3.0,0.3125,False,SVM | AAC | balanced
-SVM,AAC,imbalanced,Gradient Boosting,Physicochemical,balanced,balanced_accuracy,0.8804895946028857,0.8629357176188565,3.0,0.3125,False,SVM | AAC | imbalanced
-SVM,AAC,balanced,SVM,AAC,imbalanced,balanced_accuracy,0.889805347905862,0.8804895946028857,3.0,0.3125,False,SVM | AAC | balanced
-SVM,AAC,balanced,Random Forest,AAC,balanced,balanced_accuracy,0.889805347905862,0.8965895618524268,3.0,0.3125,False,Random Forest | AAC | balanced
-SVM,Physicochemical,balanced,SVM,Physicochemical,imbalanced,balanced_accuracy,0.8618810625122748,0.8422454498782059,3.0,0.3125,False,SVM | Physicochemical | balanced
-Gradient Boosting,AAC,imbalanced,SVM,Physicochemical,balanced,balanced_accuracy,0.8746641731454334,0.8618810625122748,3.0,0.3125,False,Gradient Boosting | AAC | imbalanced
-Gradient Boosting,AAC,imbalanced,Gradient Boosting,Physicochemical,balanced,balanced_accuracy,0.8746641731454334,0.8629357176188565,3.0,0.3125,False,Gradient Boosting | AAC | imbalanced
-Random Forest,Physicochemical,imbalanced,Gradient Boosting,Physicochemical,balanced,balanced_accuracy,0.8756444648050297,0.8629357176188565,4.0,0.4375,False,Random Forest | Physicochemical | imbalanced
-SVM,AAC,balanced,Random Forest,AAC,imbalanced,balanced_accuracy,0.889805347905862,0.8955735671461331,4.0,0.4375,False,Random Forest | AAC | imbalanced
-SVM,AAC,imbalanced,Random Forest,Physicochemical,imbalanced,balanced_accuracy,0.8804895946028857,0.8756444648050297,4.0,0.4375,False,SVM | AAC | imbalanced
-Gradient Boosting,AAC,imbalanced,Random Forest,Physicochemical,balanced,balanced_accuracy,0.8746641731454334,0.8793899586932159,5.0,0.625,False,Random Forest | Physicochemical | balanced
-Gradient Boosting,Physicochemical,balanced,Gradient Boosting,Physicochemical,imbalanced,balanced_accuracy,0.8629357176188565,0.8496577985749305,5.0,0.625,False,Gradient Boosting | Physicochemical | balanced
-Gradient Boosting,AAC,balanced,Gradient Boosting,AAC,imbalanced,balanced_accuracy,0.8784081263076452,0.8746641731454334,5.0,0.625,False,Gradient Boosting | AAC | balanced
-SVM,Physicochemical,balanced,Gradient Boosting,Physicochemical,imbalanced,balanced_accuracy,0.8618810625122748,0.8496577985749305,5.0,0.625,False,SVM | Physicochemical | balanced
-SVM,Physicochemical,balanced,Random Forest,Physicochemical,imbalanced,balanced_accuracy,0.8618810625122748,0.8756444648050297,5.0,0.625,False,Random Forest | Physicochemical | imbalanced
-Random Forest,AAC,balanced,Random Forest,AAC,imbalanced,balanced_accuracy,0.8965895618524268,0.8955735671461331,6.0,0.8125,False,Random Forest | AAC | balanced
-Gradient Boosting,AAC,imbalanced,Random Forest,Physicochemical,imbalanced,balanced_accuracy,0.8746641731454334,0.8756444648050297,6.0,0.8125,False,Random Forest | Physicochemical | imbalanced
-SVM,Physicochemical,balanced,Gradient Boosting,Physicochemical,balanced,balanced_accuracy,0.8618810625122748,0.8629357176188565,6.0,0.8125,False,Gradient Boosting | Physicochemical | balanced
-Gradient Boosting,AAC,balanced,Random Forest,Physicochemical,imbalanced,balanced_accuracy,0.8784081263076452,0.8756444648050297,6.0,0.8125,False,Gradient Boosting | AAC | balanced
-Gradient Boosting,AAC,balanced,Random Forest,Physicochemical,balanced,balanced_accuracy,0.8784081263076452,0.8793899586932159,7.0,1.0,False,Random Forest | Physicochemical | balanced
-SVM,AAC,imbalanced,Gradient Boosting,AAC,balanced,balanced_accuracy,0.8804895946028857,0.8784081263076452,7.0,1.0,False,SVM | AAC | imbalanced
-SVM,AAC,imbalanced,Random Forest,Physicochemical,balanced,balanced_accuracy,0.8804895946028857,0.8793899586932159,7.0,1.0,False,SVM | AAC | imbalanced
-Random Forest,Physicochemical,balanced,Random Forest,Physicochemical,imbalanced,balanced_accuracy,0.8793899586932159,0.8756444648050297,7.0,1.0,False,Random Forest | Physicochemical | balanced
+SVM,AAC,balanced,SVM,Physicochemical,imbalanced,balanced_accuracy,0.8904960184398533,0.845419097009328,0.0,0.001953125,True,SVM | AAC | balanced
+SVM,AAC,balanced,Gradient Boosting,Physicochemical,balanced,balanced_accuracy,0.8904960184398533,0.8615114634002952,0.0,0.001953125,True,SVM | AAC | balanced
+SVM,AAC,balanced,Gradient Boosting,DPC,imbalanced,balanced_accuracy,0.8904960184398533,0.8436135796139462,0.0,0.001953125,True,SVM | AAC | balanced
+SVM,AAC,balanced,Gradient Boosting,DPC,balanced,balanced_accuracy,0.8904960184398533,0.8588269710688575,0.0,0.001953125,True,SVM | AAC | balanced
+SVM,AAC,imbalanced,SVM,DPC,imbalanced,balanced_accuracy,0.8829677179034372,0.8981140873511887,0.0,0.001953125,True,SVM | DPC | imbalanced
+SVM,AAC,imbalanced,Gradient Boosting,DPC,imbalanced,balanced_accuracy,0.8829677179034372,0.8436135796139462,0.0,0.001953125,True,SVM | AAC | imbalanced
+SVM,AAC,imbalanced,Gradient Boosting,DPC,balanced,balanced_accuracy,0.8829677179034372,0.8588269710688575,0.0,0.001953125,True,SVM | AAC | imbalanced
+SVM,AAC,imbalanced,Random Forest,AAC,imbalanced,balanced_accuracy,0.8829677179034372,0.8974587898205659,0.0,0.001953125,True,Random Forest | AAC | imbalanced
+SVM,AAC,imbalanced,Random Forest,DPC,imbalanced,balanced_accuracy,0.8829677179034372,0.9030882571600312,0.0,0.001953125,True,Random Forest | DPC | imbalanced
+Random Forest,AAC,balanced,Gradient Boosting,DPC,imbalanced,balanced_accuracy,0.9003386568246793,0.8436135796139462,0.0,0.001953125,True,Random Forest | AAC | balanced
+Random Forest,AAC,balanced,SVM,Physicochemical,balanced,balanced_accuracy,0.9003386568246793,0.8628209960475971,0.0,0.001953125,True,Random Forest | AAC | balanced
+Random Forest,AAC,balanced,Gradient Boosting,AAC,balanced,balanced_accuracy,0.9003386568246793,0.8777165436106324,0.0,0.001953125,True,Random Forest | AAC | balanced
+SVM,AAC,imbalanced,MLP,ESM-2,imbalanced,balanced_accuracy,0.8829677179034372,0.9074298654133139,0.0,0.001953125,True,MLP | ESM-2 | imbalanced
+SVM,AAC,imbalanced,1D-CNN,ESM-2,imbalanced,balanced_accuracy,0.8829677179034372,0.9058325735164988,0.0,0.001953125,True,1D-CNN | ESM-2 | imbalanced
+SVM,AAC,imbalanced,Gradient Boosting,Physicochemical,imbalanced,balanced_accuracy,0.8829677179034372,0.8513922218499443,0.0,0.001953125,True,SVM | AAC | imbalanced
+SVM,AAC,imbalanced,SVM,Physicochemical,imbalanced,balanced_accuracy,0.8829677179034372,0.845419097009328,0.0,0.001953125,True,SVM | AAC | imbalanced
+Random Forest,AAC,balanced,Gradient Boosting,DPC,balanced,balanced_accuracy,0.9003386568246793,0.8588269710688575,0.0,0.001953125,True,Random Forest | AAC | balanced
+Random Forest,AAC,balanced,Gradient Boosting,Physicochemical,balanced,balanced_accuracy,0.9003386568246793,0.8615114634002952,0.0,0.001953125,True,Random Forest | AAC | balanced
+Random Forest,AAC,balanced,Gradient Boosting,Physicochemical,imbalanced,balanced_accuracy,0.9003386568246793,0.8513922218499443,0.0,0.001953125,True,Random Forest | AAC | balanced
+Random Forest,AAC,balanced,SVM,Physicochemical,imbalanced,balanced_accuracy,0.9003386568246793,0.845419097009328,0.0,0.001953125,True,Random Forest | AAC | balanced
+Random Forest,AAC,balanced,Random Forest,Physicochemical,balanced,balanced_accuracy,0.9003386568246793,0.8810308201692771,0.0,0.001953125,True,Random Forest | AAC | balanced
+Random Forest,AAC,imbalanced,Gradient Boosting,AAC,imbalanced,balanced_accuracy,0.8974587898205659,0.8752663015071711,0.0,0.001953125,True,Random Forest | AAC | imbalanced
+Gradient Boosting,AAC,balanced,1D-CNN,ESM-2,balanced,balanced_accuracy,0.8777165436106324,0.9021352988373614,0.0,0.001953125,True,1D-CNN | ESM-2 | balanced
+Gradient Boosting,AAC,imbalanced,SVM,DPC,balanced,balanced_accuracy,0.8752663015071711,0.9040300489505964,0.0,0.001953125,True,SVM | DPC | balanced
+Gradient Boosting,AAC,balanced,MLP,ESM-2,balanced,balanced_accuracy,0.8777165436106324,0.9047842099770523,0.0,0.001953125,True,MLP | ESM-2 | balanced
+Random Forest,AAC,imbalanced,Gradient Boosting,Physicochemical,balanced,balanced_accuracy,0.8974587898205659,0.8615114634002952,0.0,0.001953125,True,Random Forest | AAC | imbalanced
+Gradient Boosting,AAC,balanced,SVM,DPC,balanced,balanced_accuracy,0.8777165436106324,0.9040300489505964,0.0,0.001953125,True,SVM | DPC | balanced
+Random Forest,AAC,imbalanced,Gradient Boosting,Physicochemical,imbalanced,balanced_accuracy,0.8974587898205659,0.8513922218499443,0.0,0.001953125,True,Random Forest | AAC | imbalanced
+Random Forest,AAC,imbalanced,SVM,Physicochemical,balanced,balanced_accuracy,0.8974587898205659,0.8628209960475971,0.0,0.001953125,True,Random Forest | AAC | imbalanced
+Random Forest,AAC,imbalanced,SVM,Physicochemical,imbalanced,balanced_accuracy,0.8974587898205659,0.845419097009328,0.0,0.001953125,True,Random Forest | AAC | imbalanced
+Random Forest,AAC,imbalanced,Gradient Boosting,DPC,balanced,balanced_accuracy,0.8974587898205659,0.8588269710688575,0.0,0.001953125,True,Random Forest | AAC | imbalanced
+Random Forest,AAC,imbalanced,Gradient Boosting,DPC,imbalanced,balanced_accuracy,0.8974587898205659,0.8436135796139462,0.0,0.001953125,True,Random Forest | AAC | imbalanced
+Gradient Boosting,AAC,imbalanced,SVM,DPC,imbalanced,balanced_accuracy,0.8752663015071711,0.8981140873511887,0.0,0.001953125,True,SVM | DPC | imbalanced
+Gradient Boosting,AAC,imbalanced,Random Forest,DPC,imbalanced,balanced_accuracy,0.8752663015071711,0.9030882571600312,0.0,0.001953125,True,Random Forest | DPC | imbalanced
+Gradient Boosting,AAC,imbalanced,SVM,Physicochemical,imbalanced,balanced_accuracy,0.8752663015071711,0.845419097009328,0.0,0.001953125,True,Gradient Boosting | AAC | imbalanced
+Gradient Boosting,AAC,imbalanced,Gradient Boosting,DPC,imbalanced,balanced_accuracy,0.8752663015071711,0.8436135796139462,0.0,0.001953125,True,Gradient Boosting | AAC | imbalanced
+Gradient Boosting,AAC,imbalanced,1D-CNN,ESM-2,imbalanced,balanced_accuracy,0.8752663015071711,0.9058325735164988,0.0,0.001953125,True,1D-CNN | ESM-2 | imbalanced
+Gradient Boosting,AAC,imbalanced,MLP,ESM-2,imbalanced,balanced_accuracy,0.8752663015071711,0.9074298654133139,0.0,0.001953125,True,MLP | ESM-2 | imbalanced
+Gradient Boosting,AAC,imbalanced,Gradient Boosting,Physicochemical,imbalanced,balanced_accuracy,0.8752663015071711,0.8513922218499443,0.0,0.001953125,True,Gradient Boosting | AAC | imbalanced
+SVM,DPC,balanced,Gradient Boosting,DPC,imbalanced,balanced_accuracy,0.9040300489505964,0.8436135796139462,0.0,0.001953125,True,SVM | DPC | balanced
+SVM,DPC,balanced,SVM,Physicochemical,balanced,balanced_accuracy,0.9040300489505964,0.8628209960475971,0.0,0.001953125,True,SVM | DPC | balanced
+SVM,DPC,balanced,Gradient Boosting,Physicochemical,imbalanced,balanced_accuracy,0.9040300489505964,0.8513922218499443,0.0,0.001953125,True,SVM | DPC | balanced
+SVM,DPC,balanced,Gradient Boosting,Physicochemical,balanced,balanced_accuracy,0.9040300489505964,0.8615114634002952,0.0,0.001953125,True,SVM | DPC | balanced
+SVM,DPC,balanced,Random Forest,Physicochemical,balanced,balanced_accuracy,0.9040300489505964,0.8810308201692771,0.0,0.001953125,True,SVM | DPC | balanced
+SVM,DPC,balanced,Gradient Boosting,DPC,balanced,balanced_accuracy,0.9040300489505964,0.8588269710688575,0.0,0.001953125,True,SVM | DPC | balanced
+SVM,DPC,balanced,SVM,Physicochemical,imbalanced,balanced_accuracy,0.9040300489505964,0.845419097009328,0.0,0.001953125,True,SVM | DPC | balanced
+Random Forest,DPC,imbalanced,Gradient Boosting,DPC,balanced,balanced_accuracy,0.9030882571600312,0.8588269710688575,0.0,0.001953125,True,Random Forest | DPC | imbalanced
+Random Forest,DPC,imbalanced,Gradient Boosting,DPC,imbalanced,balanced_accuracy,0.9030882571600312,0.8436135796139462,0.0,0.001953125,True,Random Forest | DPC | imbalanced
+Random Forest,DPC,balanced,SVM,Physicochemical,imbalanced,balanced_accuracy,0.8898619748491987,0.845419097009328,0.0,0.001953125,True,Random Forest | DPC | balanced
+Random Forest,DPC,balanced,Gradient Boosting,Physicochemical,balanced,balanced_accuracy,0.8898619748491987,0.8615114634002952,0.0,0.001953125,True,Random Forest | DPC | balanced
+Random Forest,DPC,imbalanced,Random Forest,Physicochemical,imbalanced,balanced_accuracy,0.9030882571600312,0.8775330930111661,0.0,0.001953125,True,Random Forest | DPC | imbalanced
+Random Forest,DPC,imbalanced,Gradient Boosting,Physicochemical,balanced,balanced_accuracy,0.9030882571600312,0.8615114634002952,0.0,0.001953125,True,Random Forest | DPC | imbalanced
+Random Forest,DPC,imbalanced,SVM,Physicochemical,imbalanced,balanced_accuracy,0.9030882571600312,0.845419097009328,0.0,0.001953125,True,Random Forest | DPC | imbalanced
+Random Forest,DPC,imbalanced,SVM,Physicochemical,balanced,balanced_accuracy,0.9030882571600312,0.8628209960475971,0.0,0.001953125,True,Random Forest | DPC | imbalanced
+Random Forest,DPC,balanced,Gradient Boosting,DPC,balanced,balanced_accuracy,0.8898619748491987,0.8588269710688575,0.0,0.001953125,True,Random Forest | DPC | balanced
+Random Forest,DPC,balanced,Gradient Boosting,DPC,imbalanced,balanced_accuracy,0.8898619748491987,0.8436135796139462,0.0,0.001953125,True,Random Forest | DPC | balanced
+SVM,DPC,imbalanced,MLP,ESM-2,imbalanced,balanced_accuracy,0.8981140873511887,0.9074298654133139,0.0,0.001953125,True,MLP | ESM-2 | imbalanced
+Random Forest,DPC,balanced,SVM,Physicochemical,balanced,balanced_accuracy,0.8898619748491987,0.8628209960475971,0.0,0.001953125,True,Random Forest | DPC | balanced
+SVM,DPC,imbalanced,Gradient Boosting,Physicochemical,balanced,balanced_accuracy,0.8981140873511887,0.8615114634002952,0.0,0.001953125,True,SVM | DPC | imbalanced
+SVM,DPC,imbalanced,Gradient Boosting,Physicochemical,imbalanced,balanced_accuracy,0.8981140873511887,0.8513922218499443,0.0,0.001953125,True,SVM | DPC | imbalanced
+SVM,DPC,imbalanced,SVM,Physicochemical,imbalanced,balanced_accuracy,0.8981140873511887,0.845419097009328,0.0,0.001953125,True,SVM | DPC | imbalanced
+SVM,DPC,imbalanced,SVM,Physicochemical,balanced,balanced_accuracy,0.8981140873511887,0.8628209960475971,0.0,0.001953125,True,SVM | DPC | imbalanced
+SVM,DPC,imbalanced,Gradient Boosting,DPC,imbalanced,balanced_accuracy,0.8981140873511887,0.8436135796139462,0.0,0.001953125,True,SVM | DPC | imbalanced
+SVM,DPC,imbalanced,Gradient Boosting,DPC,balanced,balanced_accuracy,0.8981140873511887,0.8588269710688575,0.0,0.001953125,True,SVM | DPC | imbalanced
+SVM,Physicochemical,balanced,1D-CNN,ESM-2,imbalanced,balanced_accuracy,0.8628209960475971,0.9058325735164988,0.0,0.001953125,True,1D-CNN | ESM-2 | imbalanced
+SVM,Physicochemical,balanced,MLP,ESM-2,balanced,balanced_accuracy,0.8628209960475971,0.9047842099770523,0.0,0.001953125,True,MLP | ESM-2 | balanced
+Gradient Boosting,DPC,balanced,MLP,ESM-2,balanced,balanced_accuracy,0.8588269710688575,0.9047842099770523,0.0,0.001953125,True,MLP | ESM-2 | balanced
+Gradient Boosting,DPC,balanced,MLP,ESM-2,imbalanced,balanced_accuracy,0.8588269710688575,0.9074298654133139,0.0,0.001953125,True,MLP | ESM-2 | imbalanced
+Random Forest,DPC,imbalanced,Gradient Boosting,Physicochemical,imbalanced,balanced_accuracy,0.9030882571600312,0.8513922218499443,0.0,0.001953125,True,Random Forest | DPC | imbalanced
+Gradient Boosting,DPC,balanced,1D-CNN,ESM-2,imbalanced,balanced_accuracy,0.8588269710688575,0.9058325735164988,0.0,0.001953125,True,1D-CNN | ESM-2 | imbalanced
+Gradient Boosting,DPC,imbalanced,1D-CNN,ESM-2,imbalanced,balanced_accuracy,0.8436135796139462,0.9058325735164988,0.0,0.001953125,True,1D-CNN | ESM-2 | imbalanced
+Gradient Boosting,DPC,imbalanced,Random Forest,Physicochemical,imbalanced,balanced_accuracy,0.8436135796139462,0.8775330930111661,0.0,0.001953125,True,Random Forest | Physicochemical | imbalanced
+Gradient Boosting,DPC,imbalanced,MLP,ESM-2,balanced,balanced_accuracy,0.8436135796139462,0.9047842099770523,0.0,0.001953125,True,MLP | ESM-2 | balanced
+Gradient Boosting,DPC,imbalanced,1D-CNN,ESM-2,balanced,balanced_accuracy,0.8436135796139462,0.9021352988373614,0.0,0.001953125,True,1D-CNN | ESM-2 | balanced
+SVM,Physicochemical,balanced,1D-CNN,ESM-2,balanced,balanced_accuracy,0.8628209960475971,0.9021352988373614,0.0,0.001953125,True,1D-CNN | ESM-2 | balanced
+Gradient Boosting,DPC,imbalanced,MLP,ESM-2,imbalanced,balanced_accuracy,0.8436135796139462,0.9074298654133139,0.0,0.001953125,True,MLP | ESM-2 | imbalanced
+Gradient Boosting,DPC,balanced,1D-CNN,ESM-2,balanced,balanced_accuracy,0.8588269710688575,0.9021352988373614,0.0,0.001953125,True,1D-CNN | ESM-2 | balanced
+SVM,Physicochemical,imbalanced,1D-CNN,ESM-2,balanced,balanced_accuracy,0.845419097009328,0.9021352988373614,0.0,0.001953125,True,1D-CNN | ESM-2 | balanced
+SVM,Physicochemical,balanced,MLP,ESM-2,imbalanced,balanced_accuracy,0.8628209960475971,0.9074298654133139,0.0,0.001953125,True,MLP | ESM-2 | imbalanced
+SVM,Physicochemical,imbalanced,Random Forest,Physicochemical,imbalanced,balanced_accuracy,0.845419097009328,0.8775330930111661,0.0,0.001953125,True,Random Forest | Physicochemical | imbalanced
+Gradient Boosting,Physicochemical,imbalanced,1D-CNN,ESM-2,imbalanced,balanced_accuracy,0.8513922218499443,0.9058325735164988,0.0,0.001953125,True,1D-CNN | ESM-2 | imbalanced
+Gradient Boosting,Physicochemical,imbalanced,1D-CNN,ESM-2,balanced,balanced_accuracy,0.8513922218499443,0.9021352988373614,0.0,0.001953125,True,1D-CNN | ESM-2 | balanced
+Gradient Boosting,Physicochemical,imbalanced,MLP,ESM-2,balanced,balanced_accuracy,0.8513922218499443,0.9047842099770523,0.0,0.001953125,True,MLP | ESM-2 | balanced
+Gradient Boosting,Physicochemical,balanced,MLP,ESM-2,imbalanced,balanced_accuracy,0.8615114634002952,0.9074298654133139,0.0,0.001953125,True,MLP | ESM-2 | imbalanced
+Gradient Boosting,Physicochemical,imbalanced,MLP,ESM-2,imbalanced,balanced_accuracy,0.8513922218499443,0.9074298654133139,0.0,0.001953125,True,MLP | ESM-2 | imbalanced
+SVM,Physicochemical,imbalanced,MLP,ESM-2,imbalanced,balanced_accuracy,0.845419097009328,0.9074298654133139,0.0,0.001953125,True,MLP | ESM-2 | imbalanced
+SVM,Physicochemical,imbalanced,MLP,ESM-2,balanced,balanced_accuracy,0.845419097009328,0.9047842099770523,0.0,0.001953125,True,MLP | ESM-2 | balanced
+SVM,Physicochemical,imbalanced,1D-CNN,ESM-2,imbalanced,balanced_accuracy,0.845419097009328,0.9058325735164988,0.0,0.001953125,True,1D-CNN | ESM-2 | imbalanced
+Gradient Boosting,Physicochemical,balanced,1D-CNN,ESM-2,balanced,balanced_accuracy,0.8615114634002952,0.9021352988373614,0.0,0.001953125,True,1D-CNN | ESM-2 | balanced
+Gradient Boosting,Physicochemical,balanced,1D-CNN,ESM-2,imbalanced,balanced_accuracy,0.8615114634002952,0.9058325735164988,0.0,0.001953125,True,1D-CNN | ESM-2 | imbalanced
+Gradient Boosting,Physicochemical,balanced,MLP,ESM-2,balanced,balanced_accuracy,0.8615114634002952,0.9047842099770523,0.0,0.001953125,True,MLP | ESM-2 | balanced
+Random Forest,Physicochemical,imbalanced,MLP,ESM-2,imbalanced,balanced_accuracy,0.8775330930111661,0.9074298654133139,0.0,0.001953125,True,MLP | ESM-2 | imbalanced
+Random Forest,Physicochemical,imbalanced,1D-CNN,ESM-2,balanced,balanced_accuracy,0.8775330930111661,0.9021352988373614,0.0,0.001953125,True,1D-CNN | ESM-2 | balanced
+Random Forest,Physicochemical,imbalanced,MLP,ESM-2,balanced,balanced_accuracy,0.8775330930111661,0.9047842099770523,0.0,0.001953125,True,MLP | ESM-2 | balanced
+Random Forest,Physicochemical,imbalanced,Gradient Boosting,Physicochemical,imbalanced,balanced_accuracy,0.8775330930111661,0.8513922218499443,0.0,0.001953125,True,Random Forest | Physicochemical | imbalanced
+Random Forest,Physicochemical,balanced,MLP,ESM-2,imbalanced,balanced_accuracy,0.8810308201692771,0.9074298654133139,0.0,0.001953125,True,MLP | ESM-2 | imbalanced
+Gradient Boosting,DPC,balanced,Random Forest,Physicochemical,balanced,balanced_accuracy,0.8588269710688575,0.8810308201692771,0.0,0.001953125,True,Random Forest | Physicochemical | balanced
+SVM,AAC,balanced,Gradient Boosting,Physicochemical,imbalanced,balanced_accuracy,0.8904960184398533,0.8513922218499443,1.0,0.00390625,True,SVM | AAC | balanced
+SVM,AAC,imbalanced,1D-CNN,ESM-2,balanced,balanced_accuracy,0.8829677179034372,0.9021352988373614,1.0,0.00390625,True,1D-CNN | ESM-2 | balanced
+Random Forest,AAC,imbalanced,Random Forest,Physicochemical,imbalanced,balanced_accuracy,0.8974587898205659,0.8775330930111661,1.0,0.00390625,True,Random Forest | AAC | imbalanced
+Gradient Boosting,AAC,balanced,MLP,ESM-2,imbalanced,balanced_accuracy,0.8777165436106324,0.9074298654133139,1.0,0.00390625,True,MLP | ESM-2 | imbalanced
+Gradient Boosting,AAC,balanced,SVM,Physicochemical,imbalanced,balanced_accuracy,0.8777165436106324,0.845419097009328,1.0,0.00390625,True,Gradient Boosting | AAC | balanced
+Gradient Boosting,AAC,imbalanced,MLP,ESM-2,balanced,balanced_accuracy,0.8752663015071711,0.9047842099770523,1.0,0.00390625,True,MLP | ESM-2 | balanced
+Gradient Boosting,AAC,imbalanced,1D-CNN,ESM-2,balanced,balanced_accuracy,0.8752663015071711,0.9021352988373614,1.0,0.00390625,True,1D-CNN | ESM-2 | balanced
+Random Forest,Physicochemical,imbalanced,1D-CNN,ESM-2,imbalanced,balanced_accuracy,0.8775330930111661,0.9058325735164988,1.0,0.00390625,True,1D-CNN | ESM-2 | imbalanced
+SVM,AAC,balanced,SVM,Physicochemical,balanced,balanced_accuracy,0.8904960184398533,0.8628209960475971,1.0,0.00390625,True,SVM | AAC | balanced
+Random Forest,Physicochemical,balanced,1D-CNN,ESM-2,balanced,balanced_accuracy,0.8810308201692771,0.9021352988373614,1.0,0.00390625,True,1D-CNN | ESM-2 | balanced
+Random Forest,DPC,imbalanced,Random Forest,Physicochemical,balanced,balanced_accuracy,0.9030882571600312,0.8810308201692771,1.0,0.00390625,True,Random Forest | DPC | imbalanced
+Gradient Boosting,DPC,imbalanced,Random Forest,Physicochemical,balanced,balanced_accuracy,0.8436135796139462,0.8810308201692771,2.0,0.005859375,True,Random Forest | Physicochemical | balanced
+Random Forest,Physicochemical,balanced,Gradient Boosting,Physicochemical,balanced,balanced_accuracy,0.8810308201692771,0.8615114634002952,2.0,0.005859375,True,Random Forest | Physicochemical | balanced
+Gradient Boosting,AAC,balanced,1D-CNN,ESM-2,imbalanced,balanced_accuracy,0.8777165436106324,0.9058325735164988,2.0,0.005859375,True,1D-CNN | ESM-2 | imbalanced
+Gradient Boosting,AAC,balanced,Gradient Boosting,DPC,balanced,balanced_accuracy,0.8777165436106324,0.8588269710688575,2.0,0.005859375,True,Gradient Boosting | AAC | balanced
+Gradient Boosting,AAC,balanced,Random Forest,DPC,imbalanced,balanced_accuracy,0.8777165436106324,0.9030882571600312,2.0,0.005859375,True,Random Forest | DPC | imbalanced
+SVM,AAC,imbalanced,MLP,ESM-2,balanced,balanced_accuracy,0.8829677179034372,0.9047842099770523,2.0,0.005859375,True,MLP | ESM-2 | balanced
+SVM,AAC,balanced,MLP,ESM-2,balanced,balanced_accuracy,0.8904960184398533,0.9047842099770523,2.0,0.005859375,True,MLP | ESM-2 | balanced
+SVM,Physicochemical,imbalanced,Random Forest,Physicochemical,balanced,balanced_accuracy,0.845419097009328,0.8810308201692771,3.0,0.009765625,True,Random Forest | Physicochemical | balanced
+Random Forest,Physicochemical,balanced,MLP,ESM-2,balanced,balanced_accuracy,0.8810308201692771,0.9047842099770523,3.0,0.009765625,True,MLP | ESM-2 | balanced
+SVM,DPC,imbalanced,Random Forest,Physicochemical,imbalanced,balanced_accuracy,0.8981140873511887,0.8775330930111661,3.0,0.009765625,True,SVM | DPC | imbalanced
+SVM,Physicochemical,balanced,Random Forest,Physicochemical,balanced,balanced_accuracy,0.8628209960475971,0.8810308201692771,3.0,0.009765625,True,Random Forest | Physicochemical | balanced
+Random Forest,DPC,balanced,Gradient Boosting,Physicochemical,imbalanced,balanced_accuracy,0.8898619748491987,0.8513922218499443,3.0,0.009765625,True,Random Forest | DPC | balanced
+SVM,AAC,imbalanced,Gradient Boosting,AAC,imbalanced,balanced_accuracy,0.8829677179034372,0.8752663015071711,3.0,0.009765625,True,SVM | AAC | imbalanced
+SVM,DPC,balanced,Random Forest,Physicochemical,imbalanced,balanced_accuracy,0.9040300489505964,0.8775330930111661,3.0,0.009765625,True,SVM | DPC | balanced
+Gradient Boosting,AAC,balanced,Gradient Boosting,Physicochemical,balanced,balanced_accuracy,0.8777165436106324,0.8615114634002952,3.0,0.009765625,True,Gradient Boosting | AAC | balanced
+SVM,AAC,imbalanced,Gradient Boosting,Physicochemical,balanced,balanced_accuracy,0.8829677179034372,0.8615114634002952,3.0,0.009765625,True,SVM | AAC | imbalanced
+SVM,AAC,balanced,1D-CNN,ESM-2,balanced,balanced_accuracy,0.8904960184398533,0.9021352988373614,4.0,0.013671875,True,1D-CNN | ESM-2 | balanced
+SVM,AAC,imbalanced,SVM,DPC,balanced,balanced_accuracy,0.8829677179034372,0.9040300489505964,4.0,0.013671875,True,SVM | DPC | balanced
+Gradient Boosting,AAC,balanced,SVM,DPC,imbalanced,balanced_accuracy,0.8777165436106324,0.8981140873511887,4.0,0.013671875,True,SVM | DPC | imbalanced
+SVM,AAC,balanced,MLP,ESM-2,imbalanced,balanced_accuracy,0.8904960184398533,0.9074298654133139,4.0,0.013671875,True,MLP | ESM-2 | imbalanced
+Gradient Boosting,AAC,balanced,Gradient Boosting,DPC,imbalanced,balanced_accuracy,0.8777165436106324,0.8436135796139462,4.0,0.013671875,True,Gradient Boosting | AAC | balanced
+Gradient Boosting,DPC,balanced,Random Forest,Physicochemical,imbalanced,balanced_accuracy,0.8588269710688575,0.8775330930111661,4.0,0.013671875,True,Random Forest | Physicochemical | imbalanced
+Random Forest,AAC,balanced,Random Forest,Physicochemical,imbalanced,balanced_accuracy,0.9003386568246793,0.8775330930111661,4.0,0.013671875,True,Random Forest | AAC | balanced
+Random Forest,AAC,imbalanced,Gradient Boosting,AAC,balanced,balanced_accuracy,0.8974587898205659,0.8777165436106324,4.0,0.013671875,True,Random Forest | AAC | imbalanced
+Random Forest,Physicochemical,balanced,1D-CNN,ESM-2,imbalanced,balanced_accuracy,0.8810308201692771,0.9058325735164988,5.0,0.01953125,True,1D-CNN | ESM-2 | imbalanced
+Gradient Boosting,AAC,imbalanced,Gradient Boosting,DPC,balanced,balanced_accuracy,0.8752663015071711,0.8588269710688575,5.0,0.01953125,True,Gradient Boosting | AAC | imbalanced
+Random Forest,DPC,balanced,MLP,ESM-2,balanced,balanced_accuracy,0.8898619748491987,0.9047842099770523,5.0,0.01953125,True,MLP | ESM-2 | balanced
+SVM,AAC,balanced,Gradient Boosting,AAC,balanced,balanced_accuracy,0.8904960184398533,0.8777165436106324,3.0,0.01953125,True,SVM | AAC | balanced
+Random Forest,AAC,balanced,Gradient Boosting,AAC,imbalanced,balanced_accuracy,0.9003386568246793,0.8752663015071711,5.0,0.01953125,True,Random Forest | AAC | balanced
+Random Forest,DPC,balanced,MLP,ESM-2,imbalanced,balanced_accuracy,0.8898619748491987,0.9074298654133139,5.0,0.01953125,True,MLP | ESM-2 | imbalanced
+Random Forest,DPC,balanced,1D-CNN,ESM-2,imbalanced,balanced_accuracy,0.8898619748491987,0.9058325735164988,6.0,0.02734375,True,1D-CNN | ESM-2 | imbalanced
+Random Forest,DPC,balanced,Random Forest,DPC,imbalanced,balanced_accuracy,0.8898619748491987,0.9030882571600312,6.0,0.02734375,True,Random Forest | DPC | imbalanced
+SVM,AAC,balanced,SVM,DPC,balanced,balanced_accuracy,0.8904960184398533,0.9040300489505964,6.0,0.02734375,True,SVM | DPC | balanced
+SVM,DPC,balanced,Random Forest,DPC,balanced,balanced_accuracy,0.9040300489505964,0.8898619748491987,6.0,0.02734375,True,SVM | DPC | balanced
+Gradient Boosting,AAC,balanced,SVM,Physicochemical,balanced,balanced_accuracy,0.8777165436106324,0.8628209960475971,6.0,0.02734375,True,Gradient Boosting | AAC | balanced
+Random Forest,DPC,balanced,1D-CNN,ESM-2,balanced,balanced_accuracy,0.8898619748491987,0.9021352988373614,4.0,0.02734375,True,1D-CNN | ESM-2 | balanced
+SVM,AAC,imbalanced,Random Forest,AAC,balanced,balanced_accuracy,0.8829677179034372,0.9003386568246793,7.0,0.037109375,True,Random Forest | AAC | balanced
+SVM,AAC,balanced,Random Forest,DPC,imbalanced,balanced_accuracy,0.8904960184398533,0.9030882571600312,7.0,0.037109375,True,Random Forest | DPC | imbalanced
+SVM,AAC,balanced,1D-CNN,ESM-2,imbalanced,balanced_accuracy,0.8904960184398533,0.9058325735164988,7.0,0.037109375,True,1D-CNN | ESM-2 | imbalanced
+SVM,AAC,imbalanced,SVM,Physicochemical,balanced,balanced_accuracy,0.8829677179034372,0.8628209960475971,7.0,0.037109375,True,SVM | AAC | imbalanced
+Gradient Boosting,AAC,balanced,Gradient Boosting,Physicochemical,imbalanced,balanced_accuracy,0.8777165436106324,0.8513922218499443,8.0,0.048828125,True,Gradient Boosting | AAC | balanced
+SVM,AAC,balanced,Random Forest,AAC,balanced,balanced_accuracy,0.8904960184398533,0.9003386568246793,8.0,0.048828125,True,Random Forest | AAC | balanced
+SVM,AAC,balanced,Random Forest,Physicochemical,balanced,balanced_accuracy,0.8904960184398533,0.8810308201692771,8.0,0.048828125,True,SVM | AAC | balanced
+Gradient Boosting,AAC,balanced,Random Forest,DPC,balanced,balanced_accuracy,0.8777165436106324,0.8898619748491987,8.0,0.048828125,True,Random Forest | DPC | balanced
+Random Forest,AAC,balanced,Random Forest,DPC,balanced,balanced_accuracy,0.9003386568246793,0.8898619748491987,8.0,0.048828125,True,Random Forest | AAC | balanced
+Gradient Boosting,DPC,balanced,SVM,Physicochemical,imbalanced,balanced_accuracy,0.8588269710688575,0.845419097009328,9.0,0.064453125,False,Gradient Boosting | DPC | balanced
+Random Forest,AAC,imbalanced,MLP,ESM-2,imbalanced,balanced_accuracy,0.8974587898205659,0.9074298654133139,9.0,0.064453125,False,MLP | ESM-2 | imbalanced
+Random Forest,AAC,imbalanced,Random Forest,Physicochemical,balanced,balanced_accuracy,0.8974587898205659,0.8810308201692771,10.0,0.083984375,False,Random Forest | AAC | imbalanced
+SVM,DPC,imbalanced,Random Forest,Physicochemical,balanced,balanced_accuracy,0.8981140873511887,0.8810308201692771,10.0,0.083984375,False,SVM | DPC | imbalanced
+Gradient Boosting,DPC,imbalanced,Gradient Boosting,Physicochemical,imbalanced,balanced_accuracy,0.8436135796139462,0.8513922218499443,10.0,0.083984375,False,Gradient Boosting | Physicochemical | imbalanced
+Random Forest,Physicochemical,imbalanced,Gradient Boosting,Physicochemical,balanced,balanced_accuracy,0.8775330930111661,0.8615114634002952,10.0,0.083984375,False,Random Forest | Physicochemical | imbalanced
+Random Forest,Physicochemical,balanced,Gradient Boosting,Physicochemical,imbalanced,balanced_accuracy,0.8810308201692771,0.8513922218499443,11.0,0.10546875,False,Random Forest | Physicochemical | balanced
+SVM,AAC,balanced,Gradient Boosting,AAC,imbalanced,balanced_accuracy,0.8904960184398533,0.8752663015071711,11.0,0.10546875,False,SVM | AAC | balanced
+SVM,Physicochemical,balanced,SVM,Physicochemical,imbalanced,balanced_accuracy,0.8628209960475971,0.845419097009328,11.0,0.10546875,False,SVM | Physicochemical | balanced
+Gradient Boosting,AAC,imbalanced,Gradient Boosting,Physicochemical,balanced,balanced_accuracy,0.8752663015071711,0.8615114634002952,11.0,0.10546875,False,Gradient Boosting | AAC | imbalanced
+SVM,AAC,balanced,Random Forest,Physicochemical,imbalanced,balanced_accuracy,0.8904960184398533,0.8775330930111661,11.0,0.10546875,False,SVM | AAC | balanced
+Random Forest,AAC,balanced,MLP,ESM-2,balanced,balanced_accuracy,0.9003386568246793,0.9047842099770523,12.0,0.130859375,False,MLP | ESM-2 | balanced
+Gradient Boosting,AAC,imbalanced,Random Forest,DPC,balanced,balanced_accuracy,0.8752663015071711,0.8898619748491987,12.0,0.130859375,False,Random Forest | DPC | balanced
+Gradient Boosting,DPC,imbalanced,Gradient Boosting,Physicochemical,balanced,balanced_accuracy,0.8436135796139462,0.8615114634002952,12.0,0.130859375,False,Gradient Boosting | Physicochemical | balanced
+Random Forest,AAC,imbalanced,Random Forest,DPC,imbalanced,balanced_accuracy,0.8974587898205659,0.9030882571600312,12.0,0.130859375,False,Random Forest | DPC | imbalanced
+SVM,Physicochemical,imbalanced,Gradient Boosting,Physicochemical,imbalanced,balanced_accuracy,0.845419097009328,0.8513922218499443,12.0,0.130859375,False,Gradient Boosting | Physicochemical | imbalanced
+Gradient Boosting,DPC,balanced,Gradient Boosting,DPC,imbalanced,balanced_accuracy,0.8588269710688575,0.8436135796139462,12.0,0.130859375,False,Gradient Boosting | DPC | balanced
+SVM,AAC,imbalanced,Random Forest,Physicochemical,imbalanced,balanced_accuracy,0.8829677179034372,0.8775330930111661,13.0,0.16015625,False,SVM | AAC | imbalanced
+SVM,DPC,imbalanced,1D-CNN,ESM-2,imbalanced,balanced_accuracy,0.8981140873511887,0.9058325735164988,13.0,0.16015625,False,1D-CNN | ESM-2 | imbalanced
+SVM,Physicochemical,imbalanced,Gradient Boosting,Physicochemical,balanced,balanced_accuracy,0.845419097009328,0.8615114634002952,13.0,0.16015625,False,Gradient Boosting | Physicochemical | balanced
+SVM,Physicochemical,balanced,Random Forest,Physicochemical,imbalanced,balanced_accuracy,0.8628209960475971,0.8775330930111661,13.0,0.16015625,False,Random Forest | Physicochemical | imbalanced
+Gradient Boosting,DPC,imbalanced,SVM,Physicochemical,balanced,balanced_accuracy,0.8436135796139462,0.8628209960475971,14.0,0.193359375,False,SVM | Physicochemical | balanced
+SVM,DPC,balanced,SVM,DPC,imbalanced,balanced_accuracy,0.9040300489505964,0.8981140873511887,14.0,0.193359375,False,SVM | DPC | balanced
+1D-CNN,ESM-2,balanced,MLP,ESM-2,imbalanced,balanced_accuracy,0.9021352988373614,0.9074298654133139,14.0,0.193359375,False,MLP | ESM-2 | imbalanced
+Random Forest,DPC,balanced,Random Forest,Physicochemical,balanced,balanced_accuracy,0.8898619748491987,0.8810308201692771,15.0,0.232421875,False,Random Forest | DPC | balanced
+1D-CNN,ESM-2,balanced,MLP,ESM-2,balanced,balanced_accuracy,0.9021352988373614,0.9047842099770523,15.0,0.232421875,False,MLP | ESM-2 | balanced
+SVM,Physicochemical,balanced,Gradient Boosting,Physicochemical,balanced,balanced_accuracy,0.8628209960475971,0.8615114634002952,15.0,0.232421875,False,SVM | Physicochemical | balanced
+Random Forest,DPC,imbalanced,MLP,ESM-2,imbalanced,balanced_accuracy,0.9030882571600312,0.9074298654133139,12.0,0.25,False,MLP | ESM-2 | imbalanced
+SVM,AAC,balanced,Random Forest,AAC,imbalanced,balanced_accuracy,0.8904960184398533,0.8974587898205659,16.0,0.275390625,False,Random Forest | AAC | imbalanced
+SVM,DPC,imbalanced,Random Forest,DPC,balanced,balanced_accuracy,0.8981140873511887,0.8898619748491987,16.0,0.275390625,False,SVM | DPC | imbalanced
+SVM,DPC,imbalanced,Random Forest,DPC,imbalanced,balanced_accuracy,0.8981140873511887,0.9030882571600312,16.0,0.275390625,False,Random Forest | DPC | imbalanced
+Random Forest,AAC,imbalanced,1D-CNN,ESM-2,imbalanced,balanced_accuracy,0.8974587898205659,0.9058325735164988,16.0,0.275390625,False,1D-CNN | ESM-2 | imbalanced
+SVM,AAC,balanced,SVM,DPC,imbalanced,balanced_accuracy,0.8904960184398533,0.8981140873511887,16.0,0.275390625,False,SVM | DPC | imbalanced
+Random Forest,AAC,imbalanced,SVM,DPC,balanced,balanced_accuracy,0.8974587898205659,0.9040300489505964,16.0,0.275390625,False,SVM | DPC | balanced
+Gradient Boosting,AAC,imbalanced,SVM,Physicochemical,balanced,balanced_accuracy,0.8752663015071711,0.8628209960475971,17.0,0.322265625,False,Gradient Boosting | AAC | imbalanced
+Random Forest,DPC,balanced,Random Forest,Physicochemical,imbalanced,balanced_accuracy,0.8898619748491987,0.8775330930111661,17.0,0.322265625,False,Random Forest | DPC | balanced
+SVM,AAC,balanced,SVM,AAC,imbalanced,balanced_accuracy,0.8904960184398533,0.8829677179034372,18.0,0.375,False,SVM | AAC | balanced
+Random Forest,AAC,imbalanced,1D-CNN,ESM-2,balanced,balanced_accuracy,0.8974587898205659,0.9021352988373614,18.0,0.375,False,1D-CNN | ESM-2 | balanced
+Random Forest,AAC,balanced,MLP,ESM-2,imbalanced,balanced_accuracy,0.9003386568246793,0.9074298654133139,18.0,0.375,False,MLP | ESM-2 | imbalanced
+Gradient Boosting,DPC,balanced,Gradient Boosting,Physicochemical,imbalanced,balanced_accuracy,0.8588269710688575,0.8513922218499443,18.0,0.375,False,Gradient Boosting | DPC | balanced
+SVM,Physicochemical,balanced,Gradient Boosting,Physicochemical,imbalanced,balanced_accuracy,0.8628209960475971,0.8513922218499443,18.0,0.375,False,SVM | Physicochemical | balanced
+1D-CNN,ESM-2,balanced,1D-CNN,ESM-2,imbalanced,balanced_accuracy,0.9021352988373614,0.9058325735164988,19.0,0.431640625,False,1D-CNN | ESM-2 | imbalanced
+Gradient Boosting,Physicochemical,balanced,Gradient Boosting,Physicochemical,imbalanced,balanced_accuracy,0.8615114634002952,0.8513922218499443,19.0,0.431640625,False,Gradient Boosting | Physicochemical | balanced
+SVM,DPC,imbalanced,1D-CNN,ESM-2,balanced,balanced_accuracy,0.8981140873511887,0.9021352988373614,19.0,0.431640625,False,1D-CNN | ESM-2 | balanced
+SVM,DPC,imbalanced,MLP,ESM-2,balanced,balanced_accuracy,0.8981140873511887,0.9047842099770523,19.0,0.431640625,False,MLP | ESM-2 | balanced
+Random Forest,AAC,imbalanced,Random Forest,DPC,balanced,balanced_accuracy,0.8974587898205659,0.8898619748491987,19.0,0.431640625,False,Random Forest | AAC | imbalanced
+Gradient Boosting,AAC,balanced,Random Forest,Physicochemical,balanced,balanced_accuracy,0.8777165436106324,0.8810308201692771,20.0,0.4921875,False,Random Forest | Physicochemical | balanced
+Random Forest,DPC,imbalanced,1D-CNN,ESM-2,imbalanced,balanced_accuracy,0.9030882571600312,0.9058325735164988,20.0,0.4921875,False,1D-CNN | ESM-2 | imbalanced
+SVM,AAC,imbalanced,Gradient Boosting,AAC,balanced,balanced_accuracy,0.8829677179034372,0.8777165436106324,21.0,0.556640625,False,SVM | AAC | imbalanced
+Random Forest,DPC,imbalanced,1D-CNN,ESM-2,balanced,balanced_accuracy,0.9030882571600312,0.9021352988373614,21.0,0.556640625,False,Random Forest | DPC | imbalanced
+MLP,ESM-2,balanced,MLP,ESM-2,imbalanced,balanced_accuracy,0.9047842099770523,0.9074298654133139,21.0,0.556640625,False,MLP | ESM-2 | imbalanced
+Gradient Boosting,DPC,imbalanced,SVM,Physicochemical,imbalanced,balanced_accuracy,0.8436135796139462,0.845419097009328,22.0,0.607421875,False,SVM | Physicochemical | imbalanced
+1D-CNN,ESM-2,imbalanced,MLP,ESM-2,imbalanced,balanced_accuracy,0.9058325735164988,0.9074298654133139,22.0,0.625,False,MLP | ESM-2 | imbalanced
+Gradient Boosting,DPC,balanced,SVM,Physicochemical,balanced,balanced_accuracy,0.8588269710688575,0.8628209960475971,22.0,0.625,False,SVM | Physicochemical | balanced
+Gradient Boosting,DPC,balanced,Gradient Boosting,Physicochemical,balanced,balanced_accuracy,0.8588269710688575,0.8615114634002952,22.0,0.625,False,Gradient Boosting | Physicochemical | balanced
+Random Forest,AAC,balanced,SVM,DPC,imbalanced,balanced_accuracy,0.9003386568246793,0.8981140873511887,22.0,0.625,False,Random Forest | AAC | balanced
+Gradient Boosting,AAC,balanced,Gradient Boosting,AAC,imbalanced,balanced_accuracy,0.8777165436106324,0.8752663015071711,22.0,0.625,False,Gradient Boosting | AAC | balanced
+Random Forest,AAC,balanced,Random Forest,DPC,imbalanced,balanced_accuracy,0.9003386568246793,0.9030882571600312,22.0,0.625,False,Random Forest | DPC | imbalanced
+SVM,AAC,imbalanced,Random Forest,DPC,balanced,balanced_accuracy,0.8829677179034372,0.8898619748491987,22.0,0.625,False,Random Forest | DPC | balanced
+Gradient Boosting,AAC,imbalanced,Random Forest,Physicochemical,balanced,balanced_accuracy,0.8752663015071711,0.8810308201692771,22.0,0.625,False,Random Forest | Physicochemical | balanced
+Random Forest,AAC,imbalanced,MLP,ESM-2,balanced,balanced_accuracy,0.8974587898205659,0.9047842099770523,23.0,0.6953125,False,MLP | ESM-2 | balanced
+SVM,DPC,balanced,1D-CNN,ESM-2,balanced,balanced_accuracy,0.9040300489505964,0.9021352988373614,24.0,0.76953125,False,SVM | DPC | balanced
+Random Forest,AAC,balanced,SVM,DPC,balanced,balanced_accuracy,0.9003386568246793,0.9040300489505964,24.0,0.76953125,False,SVM | DPC | balanced
+SVM,AAC,imbalanced,Random Forest,Physicochemical,balanced,balanced_accuracy,0.8829677179034372,0.8810308201692771,24.0,0.76953125,False,SVM | AAC | imbalanced
+Random Forest,AAC,balanced,Random Forest,AAC,imbalanced,balanced_accuracy,0.9003386568246793,0.8974587898205659,24.0,0.76953125,False,Random Forest | AAC | balanced
+SVM,AAC,balanced,Random Forest,DPC,balanced,balanced_accuracy,0.8904960184398533,0.8898619748491987,25.0,0.845703125,False,SVM | AAC | balanced
+Random Forest,AAC,balanced,1D-CNN,ESM-2,balanced,balanced_accuracy,0.9003386568246793,0.9021352988373614,25.0,0.845703125,False,1D-CNN | ESM-2 | balanced
+Random Forest,DPC,imbalanced,MLP,ESM-2,balanced,balanced_accuracy,0.9030882571600312,0.9047842099770523,25.0,0.845703125,False,MLP | ESM-2 | balanced
+SVM,DPC,balanced,1D-CNN,ESM-2,imbalanced,balanced_accuracy,0.9040300489505964,0.9058325735164988,25.0,0.845703125,False,1D-CNN | ESM-2 | imbalanced
+Gradient Boosting,AAC,imbalanced,Random Forest,Physicochemical,imbalanced,balanced_accuracy,0.8752663015071711,0.8775330930111661,25.0,0.845703125,False,Random Forest | Physicochemical | imbalanced
+Random Forest,AAC,imbalanced,SVM,DPC,imbalanced,balanced_accuracy,0.8974587898205659,0.8981140873511887,26.0,0.921875,False,SVM | DPC | imbalanced
+Random Forest,AAC,balanced,1D-CNN,ESM-2,imbalanced,balanced_accuracy,0.9003386568246793,0.9058325735164988,26.0,0.921875,False,1D-CNN | ESM-2 | imbalanced
+Random Forest,Physicochemical,balanced,Random Forest,Physicochemical,imbalanced,balanced_accuracy,0.8810308201692771,0.8775330930111661,26.0,0.921875,False,Random Forest | Physicochemical | balanced
+SVM,DPC,balanced,Random Forest,DPC,imbalanced,balanced_accuracy,0.9040300489505964,0.9030882571600312,26.0,0.921875,False,SVM | DPC | balanced
+Gradient Boosting,AAC,balanced,Random Forest,Physicochemical,imbalanced,balanced_accuracy,0.8777165436106324,0.8775330930111661,26.0,0.921875,False,Gradient Boosting | AAC | balanced
+1D-CNN,ESM-2,imbalanced,MLP,ESM-2,balanced,balanced_accuracy,0.9058325735164988,0.9047842099770523,26.0,0.921875,False,1D-CNN | ESM-2 | imbalanced
+SVM,DPC,balanced,MLP,ESM-2,imbalanced,balanced_accuracy,0.9040300489505964,0.9074298654133139,27.0,1.0,False,MLP | ESM-2 | imbalanced
+SVM,DPC,balanced,MLP,ESM-2,balanced,balanced_accuracy,0.9040300489505964,0.9047842099770523,27.0,1.0,False,MLP | ESM-2 | balanced
