@@ -1,0 +1,40 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Skrypt z danymi na sztywno, nie bierze z plików CSV.
+
+# Dane wejściowe
+data = [
+    {"Reprezentacja": "AAC", "Model": "Random Forest", "Zbior": "Zbalansowany", "MCC": 0.8217},
+    {"Reprezentacja": "DPC", "Model": "SVM", "Zbior": "Niezbalansowany", "MCC": 0.8348},
+    {"Reprezentacja": "Cechy fizykochemiczne", "Model": "Random Forest", "Zbior": "Niezbalansowany", "MCC": 0.7844},
+    {"Reprezentacja": "ESM-2 embedding", "Model": "MLP", "Zbior": "Zbalansowany", "MCC": 0.8321}
+]
+
+df = pd.DataFrame(data)
+
+# Sortowanie słupków malejąco według wartości MCC
+df = df.sort_values(by="MCC", ascending=False)
+
+# Przygotowanie etykiet osi X
+df["Label"] = df["Reprezentacja"] + "\n(" + df["Model"] + ", " + df["Zbior"] + ")"
+
+fig, ax = plt.subplots(figsize=(10, 6))
+
+colors = ["#2b5c8f", "#4682b4", "#639ace", "#a0c4de"]
+bars = ax.bar(df["Label"], df["MCC"], color=colors[:len(df)], edgecolor="black", width=0.5)
+
+# Dodanie wartości nad słupkami
+for bar in bars:
+    yval = bar.get_height()
+    ax.text(bar.get_x() + bar.get_width()/2, yval + 0.01, f"{yval:.4f}", ha="center", va="bottom", fontsize=10, fontweight="bold")
+
+ax.set_ylabel("Matthews Correlation Coefficient (MCC)", fontsize=12)
+ax.set_title("Porównanie najwyższych wartości metryki MCC dla poszczególnych reprezentacji i modeli", fontsize=13, fontweight="bold", pad=20)
+ax.set_ylim(0, 1.0)
+ax.grid(axis="y", linestyle="--", alpha=0.5)
+
+plt.tight_layout()
+plt.savefig("mcc_best_results.png", dpi=300)
+plt.close()
+print("Wykres wygenerowany pomyślnie.")
