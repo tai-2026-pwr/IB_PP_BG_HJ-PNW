@@ -1,0 +1,26 @@
+#figure(
+  caption: [Balanced dataset (1:1)],
+  table(
+    columns: (auto, auto, auto, auto, auto),
+    align: (left, right, right, right, right),
+    fill: (x, y) => if y == 0 { luma(230) },
+    [*Configuration*], [*Mean*], [*Median*], [*Q1*], [*Q3*],
+    [1D-CNN + ESM-2], [0.8055], [0.8102], [0.7925], [0.8126],
+    [MLP + ESM-2], [0.8102], [0.8117], [0.7941], [0.8252],
+  ),
+  kind: table
+)
+
+#figure(
+  caption: [Imbalanced dataset (1:2)],
+  table(
+    columns: (auto, auto, auto, auto, auto),
+    align: (left, right, right, right, right),
+    fill: (x, y) => if y == 0 { luma(230) },
+    [*Configuration*], [*Mean*], [*Median*], [*Q1*], [*Q3*],
+    [1D-CNN + ESM-2], [0.8218], [0.8216], [0.7984], [0.8361],
+    [MLP + ESM-2], [0.8237], [0.8280], [0.8059], [0.8415],
+  ),
+  kind: table
+)
+

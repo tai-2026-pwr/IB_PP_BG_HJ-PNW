@@ -1,0 +1,15 @@
+#figure(
+  caption: [Balanced dataset (1:1)],
+  table(
+    columns: (auto, auto, auto, auto, auto),
+    align: (left, right, right, right, right),
+    fill: (x, y) => if y == 0 { luma(230) },
+    [*Configuration*], [*Mean*], [*Median*], [*Q1*], [*Q3*],
+    [One-Class SVM + AAC], [0.0373], [0.0381], [-0.0071], [0.0711],
+    [Isolation Forest + AAC], [-0.0168], [0.0000], [-0.0438], [0.0000],
+    [One-Class SVM + Physicochemical], [0.2391], [0.2454], [0.2048], [0.2776],
+    [Isolation Forest + Physicochemical], [0.1882], [0.1920], [0.1805], [0.2304],
+  ),
+  kind: table
+)
+
