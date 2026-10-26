@@ -1,0 +1,37 @@
+{
+  "artifact_type": "sklearn_joblib",
+  "classes": [
+    0,
+    1
+  ],
+  "created_at": "2026-10-26T12:36:52+00:00",
+  "dataset": "imbalanced",
+  "feature_dim": 20,
+  "input_shape": [
+    20
+  ],
+  "model_id": "classical.aac.svm.imbalanced",
+  "model_name": "SVM",
+  "output_kind": "probability",
+  "positive_class": 1,
+  "representation": "AAC",
+  "schema_version": 1,
+  "score_transform": "predict_proba",
+  "test_metrics": {
+    "accuracy": 0.9163449163449163,
+    "balanced_accuracy": 0.8946384830381868,
+    "f1": 0.8712871287128713,
+    "mcc": 0.8123419162902971,
+    "roc_auc": 0.9611167361579439
+  },
+  "threshold": 0.5,
+  "training_set_size": 6216,
+  "versions": {
+    "numpy": "2.4.3",
+    "peptides": "0.5.0",
+    "python": "3.14.2",
+    "scikit-learn": "1.8.0",
+    "torch": "2.11.0+rocm7.2",
+    "transformers": "5.8.1"
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "models": [
+    {
+      "artifact": "classical_ml/gradient-boosting_aac_balanced.joblib",
+      "artifact_type": "sklearn_joblib",
+      "dataset": "balanced",
+      "metadata": "classical_ml/gradient-boosting_aac_balanced.json",
+      "model_id": "classical.aac.gradient-boosting.balanced",
+      "model_name": "Gradient Boosting",
+      "representation": "AAC"
+    },
+    {
+      "artifact": "classical_ml/gradient-boosting_aac_imbalanced.joblib",
+      "artifact_type": "sklearn_joblib",
+      "dataset": "imbalanced",
+      "metadata": "classical_ml/gradient-boosting_aac_imbalanced.json",
+      "model_id": "classical.aac.gradient-boosting.imbalanced",
+      "model_name": "Gradient Boosting",
+      "representation": "AAC"
+    },
+    {
+      "artifact": "classical_ml/random-forest_aac_balanced.joblib",
+      "artifact_type": "sklearn_joblib",
+      "dataset": "balanced",
+      "metadata": "classical_ml/random-forest_aac_balanced.json",
+      "model_id": "classical.aac.random-forest.balanced",
+      "model_name": "Random Forest",
+      "representation": "AAC"
+    },
+    {
+      "artifact": "classical_ml/random-forest_aac_imbalanced.joblib",
+      "artifact_type": "sklearn_joblib",
+      "dataset": "imbalanced",
+      "metadata": "classical_ml/random-forest_aac_imbalanced.json",
+      "model_id": "classical.aac.random-forest.imbalanced",
+      "model_name": "Random Forest",
+      "representation": "AAC"
+    },
+    {
+      "artifact": "classical_ml/svm_aac_balanced.joblib",
+      "artifact_type": "sklearn_joblib",
+      "dataset": "balanced",
+      "metadata": "classical_ml/svm_aac_balanced.json",
+      "model_id": "classical.aac.svm.balanced",
+      "model_name": "SVM",
+      "representation": "AAC"
+    },
+    {
+      "artifact": "classical_ml/svm_aac_imbalanced.joblib",
+      "artifact_type": "sklearn_joblib",
+      "dataset": "imbalanced",
+      "metadata": "classical_ml/svm_aac_imbalanced.json",
+      "model_id": "classical.aac.svm.imbalanced",
+      "model_name": "SVM",
+      "representation": "AAC"
+    },
+    {
+      "artifact": "classical_ml/gradient-boosting_dpc_balanced.joblib",
+      "artifact_type": "sklearn_joblib",
+      "dataset": "balanced",
+      "metadata": "classical_ml/gradient-boosting_dpc_balanced.json",
+      "model_id": "classical.dpc.gradient-boosting.balanced",
+      "model_name": "Gradient Boosting",
+      "representation": "DPC"
+    },
+    {
+      "artifact": "classical_ml/gradient-boosting_dpc_imbalanced.joblib",
+      "artifact_type": "sklearn_joblib",
+      "dataset": "imbalanced",
+      "metadata": "classical_ml/gradient-boosting_dpc_imbalanced.json",
+      "model_id": "classical.dpc.gradient-boosting.imbalanced",
+      "model_name": "Gradient Boosting",
+      "representation": "DPC"
+    },
+    {
+      "artifact": "classical_ml/random-forest_dpc_balanced.joblib",
+      "artifact_type": "sklearn_joblib",
+      "dataset": "balanced",
+      "metadata": "classical_ml/random-forest_dpc_balanced.json",
+      "model_id": "classical.dpc.random-forest.balanced",
+      "model_name": "Random Forest",
+      "representation": "DPC"
+    },
+    {
+      "artifact": "classical_ml/random-forest_dpc_imbalanced.joblib",
+      "artifact_type": "sklearn_joblib",
+      "dataset": "imbalanced",
+      "metadata": "classical_ml/random-forest_dpc_imbalanced.json",
+      "model_id": "classical.dpc.random-forest.imbalanced",
+      "model_name": "Random Forest",
+      "representation": "DPC"
+    },
+    {
+      "artifact": "classical_ml/svm_dpc_balanced.joblib",
+      "artifact_type": "sklearn_joblib",
+      "dataset": "balanced",
+      "metadata": "classical_ml/svm_dpc_balanced.json",
+      "model_id": "classical.dpc.svm.balanced",
+      "model_name": "SVM",
+      "representation": "DPC"
+    },
+    {
+      "artifact": "classical_ml/svm_dpc_imbalanced.joblib",
+      "artifact_type": "sklearn_joblib",
+      "dataset": "imbalanced",
+      "metadata": "classical_ml/svm_dpc_imbalanced.json",
+      "model_id": "classical.dpc.svm.imbalanced",
+      "model_name": "SVM",
+      "representation": "DPC"
+    },
+    {
+      "artifact": "classical_ml/gradient-boosting_physicochemical_balanced.joblib",
+      "artifact_type": "sklearn_joblib",
+      "dataset": "balanced",
+      "metadata": "classical_ml/gradient-boosting_physicochemical_balanced.json",
+      "model_id": "classical.physicochemical.gradient-boosting.balanced",
+      "model_name": "Gradient Boosting",
+      "representation": "Physicochemical"
+    },
+    {
+      "artifact": "classical_ml/gradient-boosting_physicochemical_imbalanced.joblib",
+      "artifact_type": "sklearn_joblib",
+      "dataset": "imbalanced",
+      "metadata": "classical_ml/gradient-boosting_physicochemical_imbalanced.json",
+      "model_id": "classical.physicochemical.gradient-boosting.imbalanced",
+      "model_name": "Gradient Boosting",
+      "representation": "Physicochemical"
+    },
+    {
+      "artifact": "classical_ml/random-forest_physicochemical_balanced.joblib",
+      "artifact_type": "sklearn_joblib",
+      "dataset": "balanced",
+      "metadata": "classical_ml/random-forest_physicochemical_balanced.json",
+      "model_id": "classical.physicochemical.random-forest.balanced",
+      "model_name": "Random Forest",
+      "representation": "Physicochemical"
+    },
+    {
+      "artifact": "classical_ml/random-forest_physicochemical_imbalanced.joblib",
+      "artifact_type": "sklearn_joblib",
+      "dataset": "imbalanced",
+      "metadata": "classical_ml/random-forest_physicochemical_imbalanced.json",
+      "model_id": "classical.physicochemical.random-forest.imbalanced",
+      "model_name": "Random Forest",
+      "representation": "Physicochemical"
+    },
+    {
+      "artifact": "classical_ml/svm_physicochemical_balanced.joblib",
+      "artifact_type": "sklearn_joblib",
+      "dataset": "balanced",
+      "metadata": "classical_ml/svm_physicochemical_balanced.json",
+      "model_id": "classical.physicochemical.svm.balanced",
+      "model_name": "SVM",
+      "representation": "Physicochemical"
+    },
+    {
+      "artifact": "classical_ml/svm_physicochemical_imbalanced.joblib",
+      "artifact_type": "sklearn_joblib",
+      "dataset": "imbalanced",
+      "metadata": "classical_ml/svm_physicochemical_imbalanced.json",
+      "model_id": "classical.physicochemical.svm.imbalanced",
+      "model_name": "SVM",
+      "representation": "Physicochemical"
+    },
+    {
+      "artifact": "dl/mlp_esm-2_mean_balanced.pt",
+      "artifact_type": "torch_state_dict",
+      "dataset": "balanced",
+      "metadata": "dl/mlp_esm-2_mean_balanced.json",
+      "model_id": "dl.esm-2.mean.mlp.balanced",
+      "model_name": "MLP",
+      "representation": "ESM-2"
+    },
+    {
+      "artifact": "dl/mlp_esm-2_mean_imbalanced.pt",
+      "artifact_type": "torch_state_dict",
+      "dataset": "imbalanced",
+      "metadata": "dl/mlp_esm-2_mean_imbalanced.json",
+      "model_id": "dl.esm-2.mean.mlp.imbalanced",
+      "model_name": "MLP",
+      "representation": "ESM-2"
+    },
+    {
+      "artifact": "dl/1d-cnn_esm-2_per-token_balanced.pt",
+      "artifact_type": "torch_state_dict",
+      "dataset": "balanced",
+      "metadata": "dl/1d-cnn_esm-2_per-token_balanced.json",
+      "model_id": "dl.esm-2.per-token.1d-cnn.balanced",
+      "model_name": "1D-CNN",
+      "representation": "ESM-2"
+    },
+    {
+      "artifact": "dl/1d-cnn_esm-2_per-token_imbalanced.pt",
+      "artifact_type": "torch_state_dict",
+      "dataset": "imbalanced",
+      "metadata": "dl/1d-cnn_esm-2_per-token_imbalanced.json",
+      "model_id": "dl.esm-2.per-token.1d-cnn.imbalanced",
+      "model_name": "1D-CNN",
+      "representation": "ESM-2"
+    },
+    {
+      "artifact": "one_class/isolation-forest_aac_balanced.joblib",
+      "artifact_type": "sklearn_joblib",
+      "dataset": "balanced",
+      "metadata": "one_class/isolation-forest_aac_balanced.json",
+      "model_id": "one-class.aac.isolation-forest.balanced",
+      "model_name": "Isolation Forest",
+      "representation": "AAC"
+    },
+    {
+      "artifact": "one_class/one-class-svm_aac_balanced.joblib",
+      "artifact_type": "sklearn_joblib",
+      "dataset": "balanced",
+      "metadata": "one_class/one-class-svm_aac_balanced.json",
+      "model_id": "one-class.aac.one-class-svm.balanced",
+      "model_name": "One-Class SVM",
+      "representation": "AAC"
+    },
+    {
+      "artifact": "one_class/isolation-forest_physicochemical_balanced.joblib",
+      "artifact_type": "sklearn_joblib",
+      "dataset": "balanced",
+      "metadata": "one_class/isolation-forest_physicochemical_balanced.json",
+      "model_id": "one-class.physicochemical.isolation-forest.balanced",
+      "model_name": "Isolation Forest",
+      "representation": "Physicochemical"
+    },
+    {
+      "artifact": "one_class/one-class-svm_physicochemical_balanced.joblib",
+      "artifact_type": "sklearn_joblib",
+      "dataset": "balanced",
+      "metadata": "one_class/one-class-svm_physicochemical_balanced.json",
+      "model_id": "one-class.physicochemical.one-class-svm.balanced",
+      "model_name": "One-Class SVM",
+      "representation": "Physicochemical"
+    }
+  ],
+  "schema_version": 1
+}

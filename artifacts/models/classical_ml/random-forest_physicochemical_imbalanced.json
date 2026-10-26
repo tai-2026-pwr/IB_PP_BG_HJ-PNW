@@ -1,0 +1,37 @@
+{
+  "artifact_type": "sklearn_joblib",
+  "classes": [
+    0,
+    1
+  ],
+  "created_at": "2026-10-26T12:37:27+00:00",
+  "dataset": "imbalanced",
+  "feature_dim": 8,
+  "input_shape": [
+    8
+  ],
+  "model_id": "classical.physicochemical.random-forest.imbalanced",
+  "model_name": "Random Forest",
+  "output_kind": "probability",
+  "positive_class": 1,
+  "representation": "Physicochemical",
+  "schema_version": 1,
+  "score_transform": "predict_proba",
+  "test_metrics": {
+    "accuracy": 0.9041184041184042,
+    "balanced_accuracy": 0.8812985466553227,
+    "f1": 0.8526211671612265,
+    "mcc": 0.7844252001183607,
+    "roc_auc": 0.9484227103251972
+  },
+  "threshold": 0.5,
+  "training_set_size": 6216,
+  "versions": {
+    "numpy": "2.4.3",
+    "peptides": "0.5.0",
+    "python": "3.14.2",
+    "scikit-learn": "1.8.0",
+    "torch": "2.11.0+rocm7.2",
+    "transformers": "5.8.1"
+  }
+}
