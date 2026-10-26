@@ -1,0 +1,41 @@
+{
+  "artifact_type": "torch_state_dict",
+  "created_at": "2026-10-26T12:36:44+00:00",
+  "dataset": "balanced",
+  "esm_model_name": "facebook/esm2_t33_650M_UR50D",
+  "hyperparameters": {
+    "batch_size": 64,
+    "epochs": 50,
+    "lr": 0.0001
+  },
+  "input_dim": 1280,
+  "input_shape": [
+    1280
+  ],
+  "max_len": 50,
+  "model_id": "dl.esm-2.mean.mlp.balanced",
+  "model_name": "MLP",
+  "output_kind": "probability",
+  "pooling": "mean",
+  "positive_class": 1,
+  "representation": "ESM-2",
+  "schema_version": 1,
+  "score_transform": "sigmoid",
+  "test_metrics": {
+    "accuracy": 0.9160377358490566,
+    "balanced_accuracy": 0.9160617463713683,
+    "f1": 0.9161168708765316,
+    "mcc": 0.8321160867348567,
+    "roc_auc": 0.967813137480375
+  },
+  "threshold": 0.5,
+  "training_set_size": 4240,
+  "versions": {
+    "numpy": "2.4.3",
+    "peptides": "0.5.0",
+    "python": "3.14.2",
+    "scikit-learn": "1.8.0",
+    "torch": "2.11.0+rocm7.2",
+    "transformers": "5.8.1"
+  }
+}
