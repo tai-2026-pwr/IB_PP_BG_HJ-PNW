@@ -31,12 +31,8 @@ def evaluate_test_set_classic_ml(
     x_test: np.ndarray,
     y_test: np.ndarray,
 ) -> pd.DataFrame:
-    model = _make_sklearn_model(model_name)
-    model.fit(x_train, y_train)
-    y_pred = model.predict(x_test)
-    y_score = model.predict_proba(x_test)[:, 1]
-
-    metrics = calculate_metrics(y_test, y_pred, y_score)
+    model = fit_final_classic_ml(model_name, x_train, y_train)
+    metrics = evaluate_fitted_classic_ml(model, x_test, y_test)
 
     return pd.DataFrame(
         [
@@ -51,6 +47,29 @@ def evaluate_test_set_classic_ml(
     )
 
 
+def fit_final_classic_ml(
+    model_name: ClassicalModel,
+    x_train: np.ndarray,
+    y_train: np.ndarray,
+) -> BaseEstimator:
+    """Fit a classical model on the full training set."""
+    model = _make_sklearn_model(model_name)
+    model.fit(x_train, y_train)
+    return model
+
+
+def evaluate_fitted_classic_ml(
+    model: BaseEstimator,
+    x_test: np.ndarray,
+    y_test: np.ndarray,
+) -> Metrics:
+    """Evaluate an already fitted classical model."""
+    y_pred = model.predict(x_test)
+    y_score = model.predict_proba(x_test)[:, 1]
+
+    return calculate_metrics(y_test, y_pred, y_score)
+
+
 def train_fold_classic_ml(
     model_name: ClassicalModel,
     x_fold_train: np.ndarray,
@@ -59,13 +78,8 @@ def train_fold_classic_ml(
     y_fold_val: np.ndarray,
 ) -> Metrics:
     """Train an sklearn model on a fold and evaluate it."""
-    model = _make_sklearn_model(model_name)
-    model.fit(x_fold_train, y_fold_train)
-
-    y_pred = model.predict(x_fold_val)
-    y_score = model.predict_proba(x_fold_val)[:, 1]
-
-    return calculate_metrics(y_fold_val, y_pred, y_score)
+    model = fit_final_classic_ml(model_name, x_fold_train, y_fold_train)
+    return evaluate_fitted_classic_ml(model, x_fold_val, y_fold_val)
 
 
 def _make_sklearn_model(model_name: ClassicalModel) -> BaseEstimator:

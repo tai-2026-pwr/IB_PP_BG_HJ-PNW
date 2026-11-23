@@ -1,5 +1,4 @@
 from __future__ import annotations
-from tqdm import tqdm
 
 import dataclasses
 from enum import StrEnum
@@ -11,6 +10,7 @@ import pandas as pd
 import torch
 import torch.nn as nn
 from torch.optim import Adam
+from tqdm import tqdm
 
 from src.constants import DEVICE, RANDOM_STATE
 from src.model_helpers.dl.constants import BATCH_SIZE, EPOCHS, LR
@@ -56,11 +56,11 @@ def train_fold_dl(
     batch_size: int = BATCH_SIZE,
 ) -> Metrics:
     """Instantiate a DL model and run the training pipeline for a single CV fold."""
-    model = _make_pytorch_model(model_name, input_dim=x_fold_train.shape[-1]).to(DEVICE)
+    model = build_dl_model(model_name, input_dim=x_fold_train.shape[-1]).to(DEVICE)
 
     _train_model(model, x_fold_train, y_fold_train, epochs, lr, batch_size)
 
-    return _evaluate_pytorch_model(model, x_fold_val, y_fold_val)
+    return evaluate_dl_model(model, x_fold_val, y_fold_val)
 
 
 def evaluate_test_set_dl(
@@ -73,9 +73,9 @@ def evaluate_test_set_dl(
     y_test: np.ndarray,
 ) -> pd.DataFrame:
     """Train the final DL model on the full train set and evaluate on the test set."""
-    model = _train_final_model_pytorch(model_name=model_name, x_train=x_train, y_train=y_train)
+    model = fit_final_dl(model_name=model_name, x_train=x_train, y_train=y_train)
 
-    metrics = _evaluate_pytorch_model(model, x_test, y_test)
+    metrics = evaluate_dl_model(model, x_test, y_test)
 
     row = {
         "model": model_name,
@@ -88,7 +88,7 @@ def evaluate_test_set_dl(
     return pd.DataFrame([row])
 
 
-def _train_final_model_pytorch(
+def fit_final_dl(
     model_name: DLModel,
     x_train: np.ndarray,
     y_train: np.ndarray,
@@ -97,7 +97,7 @@ def _train_final_model_pytorch(
     batch_size: int = BATCH_SIZE,
 ) -> nn.Module:
     """Train the final production PyTorch model on the full training set."""
-    model = _make_pytorch_model(model_name, input_dim=x_train.shape[-1]).to(DEVICE)
+    model = build_dl_model(model_name, input_dim=x_train.shape[-1]).to(DEVICE)
     _train_model(model, x_train, y_train, epochs, lr, batch_size)
     return model
 
@@ -148,7 +148,7 @@ def _build_loaders(
     )
 
 
-def _evaluate_pytorch_model(
+def evaluate_dl_model(
     model: nn.Module,
     x: np.ndarray,
     y: np.ndarray,
@@ -171,7 +171,7 @@ def _evaluate_pytorch_model(
     return Metrics(**metrics_dict)
 
 
-def _make_pytorch_model(model_name: DLModel, input_dim: int) -> torch.nn.Module:
+def build_dl_model(model_name: DLModel, input_dim: int) -> torch.nn.Module:
     """Factory module ensuring consistent seed generation per pipeline invocation."""
     torch.manual_seed(RANDOM_STATE)
 

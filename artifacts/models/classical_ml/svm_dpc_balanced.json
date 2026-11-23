@@ -1,0 +1,37 @@
+{
+  "artifact_type": "sklearn_joblib",
+  "classes": [
+    0,
+    1
+  ],
+  "created_at": "2026-10-26T12:37:00+00:00",
+  "dataset": "balanced",
+  "feature_dim": 400,
+  "input_shape": [
+    400
+  ],
+  "model_id": "classical.dpc.svm.balanced",
+  "model_name": "SVM",
+  "output_kind": "probability",
+  "positive_class": 1,
+  "representation": "DPC",
+  "schema_version": 1,
+  "score_transform": "predict_proba",
+  "test_metrics": {
+    "accuracy": 0.9066037735849056,
+    "balanced_accuracy": 0.9069265302199074,
+    "f1": 0.9014925373134328,
+    "mcc": 0.8187574235903837,
+    "roc_auc": 0.9611557508072526
+  },
+  "threshold": 0.5,
+  "training_set_size": 4240,
+  "versions": {
+    "numpy": "2.4.3",
+    "peptides": "0.5.0",
+    "python": "3.14.2",
+    "scikit-learn": "1.8.0",
+    "torch": "2.11.0+rocm7.2",
+    "transformers": "5.8.1"
+  }
+}

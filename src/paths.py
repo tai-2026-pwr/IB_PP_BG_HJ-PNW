@@ -19,3 +19,8 @@ EMBEDDINGS_PER_TOKEN_DIR = ROOT / "data/embeddings/per_token"
 
 EMBEDDINGS_MEAN_DIR.mkdir(parents=True, exist_ok=True)
 EMBEDDINGS_PER_TOKEN_DIR.mkdir(parents=True, exist_ok=True)
+
+ARTIFACTS_DIR = ROOT / "artifacts"
+MODELS_DIR = ARTIFACTS_DIR / "models"
+
+MODELS_DIR.mkdir(parents=True, exist_ok=True)

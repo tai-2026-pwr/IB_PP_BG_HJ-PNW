@@ -1,0 +1,37 @@
+{
+  "artifact_type": "sklearn_joblib",
+  "classes": [
+    0,
+    1
+  ],
+  "created_at": "2026-10-26T12:36:54+00:00",
+  "dataset": "balanced",
+  "feature_dim": 20,
+  "input_shape": [
+    20
+  ],
+  "model_id": "classical.aac.gradient-boosting.balanced",
+  "model_name": "Gradient Boosting",
+  "output_kind": "probability",
+  "positive_class": 1,
+  "representation": "AAC",
+  "schema_version": 1,
+  "score_transform": "predict_proba",
+  "test_metrics": {
+    "accuracy": 0.8971698113207547,
+    "balanced_accuracy": 0.8972893399930935,
+    "f1": 0.8954937679769894,
+    "mcc": 0.7951322843924317,
+    "roc_auc": 0.956171611051974
+  },
+  "threshold": 0.5,
+  "training_set_size": 4240,
+  "versions": {
+    "numpy": "2.4.3",
+    "peptides": "0.5.0",
+    "python": "3.14.2",
+    "scikit-learn": "1.8.0",
+    "torch": "2.11.0+rocm7.2",
+    "transformers": "5.8.1"
+  }
+}

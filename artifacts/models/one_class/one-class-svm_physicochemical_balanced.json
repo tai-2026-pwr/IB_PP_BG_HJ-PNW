@@ -1,0 +1,33 @@
+{
+  "anomaly_label": 1,
+  "artifact_type": "sklearn_joblib",
+  "created_at": "2026-10-26T12:37:30+00:00",
+  "dataset": "balanced",
+  "feature_dim": 8,
+  "input_shape": [
+    8
+  ],
+  "model_id": "one-class.physicochemical.one-class-svm.balanced",
+  "model_name": "One-Class SVM",
+  "normal_label": 0,
+  "output_kind": "anomaly_score",
+  "representation": "Physicochemical",
+  "schema_version": 1,
+  "score_transform": "negated_decision_function",
+  "test_metrics": {
+    "accuracy": 0.6066037735849057,
+    "balanced_accuracy": 0.6067246725598185,
+    "f1": 0.5994236311239193,
+    "mcc": 0.213630050820252,
+    "roc_auc": 0.6573902332221396
+  },
+  "training_set_size": 4240,
+  "versions": {
+    "numpy": "2.4.3",
+    "peptides": "0.5.0",
+    "python": "3.14.2",
+    "scikit-learn": "1.8.0",
+    "torch": "2.11.0+rocm7.2",
+    "transformers": "5.8.1"
+  }
+}

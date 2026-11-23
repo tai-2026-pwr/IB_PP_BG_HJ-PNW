@@ -1,0 +1,42 @@
+{
+  "artifact_type": "torch_state_dict",
+  "created_at": "2026-10-26T12:35:35+00:00",
+  "dataset": "balanced",
+  "esm_model_name": "facebook/esm2_t33_650M_UR50D",
+  "hyperparameters": {
+    "batch_size": 64,
+    "epochs": 50,
+    "lr": 0.0001
+  },
+  "input_dim": 1280,
+  "input_shape": [
+    50,
+    1280
+  ],
+  "max_len": 50,
+  "model_id": "dl.esm-2.per-token.1d-cnn.balanced",
+  "model_name": "1D-CNN",
+  "output_kind": "probability",
+  "pooling": "per_token",
+  "positive_class": 1,
+  "representation": "ESM-2",
+  "schema_version": 1,
+  "score_transform": "sigmoid",
+  "test_metrics": {
+    "accuracy": 0.8924528301886793,
+    "balanced_accuracy": 0.8926629902702472,
+    "f1": 0.8888888888888888,
+    "mcc": 0.7872340826802269,
+    "roc_auc": 0.9618179293747398
+  },
+  "threshold": 0.5,
+  "training_set_size": 4240,
+  "versions": {
+    "numpy": "2.4.3",
+    "peptides": "0.5.0",
+    "python": "3.14.2",
+    "scikit-learn": "1.8.0",
+    "torch": "2.11.0+rocm7.2",
+    "transformers": "5.8.1"
+  }
+}
